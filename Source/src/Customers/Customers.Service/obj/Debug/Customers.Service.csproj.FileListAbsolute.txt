@@ -1,0 +1,14 @@
+c:\Projects\CompositeUI\Source\src\Customers\Customers.Service\bin\Debug\HomeManager.Customers.Service.dll.config
+c:\Projects\CompositeUI\Source\src\Customers\Customers.Service\bin\Debug\HomeManager.Customers.Service.dll
+c:\Projects\CompositeUI\Source\src\Customers\Customers.Service\bin\Debug\HomeManager.Customers.Service.pdb
+c:\Projects\CompositeUI\Source\src\Customers\Customers.Service\bin\Debug\HomeManager.Customers.Contracts.dll
+c:\Projects\CompositeUI\Source\src\Customers\Customers.Service\bin\Debug\NServiceBus.Core.dll
+c:\Projects\CompositeUI\Source\src\Customers\Customers.Service\bin\Debug\NServiceBus.Host.exe
+c:\Projects\CompositeUI\Source\src\Customers\Customers.Service\bin\Debug\HomeManager.Customers.Contracts.pdb
+c:\Projects\CompositeUI\Source\src\Customers\Customers.Service\bin\Debug\NServiceBus.Core.pdb
+c:\Projects\CompositeUI\Source\src\Customers\Customers.Service\bin\Debug\NServiceBus.Core.xml
+c:\Projects\CompositeUI\Source\src\Customers\Customers.Service\bin\Debug\NServiceBus.Host.pdb
+c:\Projects\CompositeUI\Source\src\Customers\Customers.Service\bin\Debug\NServiceBus.Host.xml
+c:\Projects\CompositeUI\Source\src\Customers\Customers.Service\obj\Debug\Customers.Service.csprojResolveAssemblyReference.cache
+c:\Projects\CompositeUI\Source\src\Customers\Customers.Service\obj\Debug\HomeManager.Customers.Service.dll
+c:\Projects\CompositeUI\Source\src\Customers\Customers.Service\obj\Debug\HomeManager.Customers.Service.pdb

@@ -1,0 +1,24 @@
+﻿@{
+    var name = Html.ViewData.TemplateInfo.GetFullHtmlFieldName("");
+    var id = Html.ViewData.TemplateInfo.GetFullHtmlFieldId("");
+}
+
+<table id="@id">
+    <tr>
+        <td><button disabled>Remove</button></td>
+        <td><input name="@name" type="file"/></td>
+    </tr>
+</table>
+
+<script type="text/javascript">
+    $("#@id").on("click", "[name='@name']", function () {
+        $("#@id").append("<tr><td><button>Remove</button></td><td><input name='@name' type='file'/></td></tr>");
+        $(this).closest("tr").find("button").prop("disabled", false);
+    });
+    $("#@id").on("click", "button", function (e) {
+        e.preventDefault();
+        $(this).closest("tr").remove();
+        if($("#@id tr").length === 1)
+            $("#@id tr:first-child button").prop("disabled", true);
+    });
+</script>

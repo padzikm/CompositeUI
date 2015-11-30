@@ -1,0 +1,20 @@
+﻿@using HomeManager.Web.Common.UIKeys
+@model IDictionary<string,HomeManager.Service.Infrastructure.ViewModels.IViewModel>
+
+@{
+    ViewBag.Title = "title";
+}
+
+<h2>main action</h2>
+
+@using (Html.BeginForm())
+{
+    <input type="hidden" name="testId" value="@ViewBag.Id"/>
+    <div>
+        @Model[UIKeysTest.AddCustomer.PersonalData].Execute(this)
+    </div>
+    <div>
+        @Model[UIKeysTest.AddCustomer.AgeData].Execute(this)
+    </div>
+    <input type="submit" value="Send"/>
+}

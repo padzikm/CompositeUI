@@ -1,0 +1,10 @@
+﻿@model System.Collections.IEnumerable
+
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>
+            @Html.DisplayFor(p => item)
+        </li>
+    }
+</ul>

@@ -1,0 +1,17 @@
+c:\Users\Michal\Desktop\CompositeUI\Source\src\Infrastructure\bin\Debug\HomeManager.Infrastructure.dll
+c:\Users\Michal\Desktop\CompositeUI\Source\src\Infrastructure\bin\Debug\HomeManager.Infrastructure.pdb
+c:\Users\Michal\Desktop\CompositeUI\Source\src\Infrastructure\bin\Debug\Castle.Core.dll
+c:\Users\Michal\Desktop\CompositeUI\Source\src\Infrastructure\bin\Debug\Castle.Windsor.dll
+c:\Users\Michal\Desktop\CompositeUI\Source\src\Infrastructure\bin\Debug\Castle.Core.xml
+c:\Users\Michal\Desktop\CompositeUI\Source\src\Infrastructure\bin\Debug\Castle.Windsor.xml
+c:\Users\Michal\Desktop\CompositeUI\Source\src\Infrastructure\obj\Debug\Infrastructure.csprojResolveAssemblyReference.cache
+c:\Users\Michal\Desktop\CompositeUI\Source\src\Infrastructure\obj\Debug\HomeManager.Infrastructure.dll
+c:\Users\Michal\Desktop\CompositeUI\Source\src\Infrastructure\obj\Debug\HomeManager.Infrastructure.pdb
+c:\Projects\CompositeUI\Source\src\Infrastructure\bin\Debug\HomeManager.Infrastructure.dll
+c:\Projects\CompositeUI\Source\src\Infrastructure\bin\Debug\HomeManager.Infrastructure.pdb
+c:\Projects\CompositeUI\Source\src\Infrastructure\bin\Debug\Castle.Core.dll
+c:\Projects\CompositeUI\Source\src\Infrastructure\bin\Debug\Castle.Windsor.dll
+c:\Projects\CompositeUI\Source\src\Infrastructure\bin\Debug\Castle.Core.xml
+c:\Projects\CompositeUI\Source\src\Infrastructure\bin\Debug\Castle.Windsor.xml
+c:\Projects\CompositeUI\Source\src\Infrastructure\obj\Debug\HomeManager.Infrastructure.dll
+c:\Projects\CompositeUI\Source\src\Infrastructure\obj\Debug\HomeManager.Infrastructure.pdb

@@ -1,0 +1,26 @@
+﻿@using HomeManager.Web.Common.Extensions
+@using HomeManager.Web.Infrastructure
+@model object
+
+@{
+    Html.ViewDataContainer.ViewData.TemplateInfo.RemoveFromVisited(ViewData);
+    if (ViewContext.RequestContext.RouteData.DataTokens.ContainsKey(Consts.RouteServiceKey))
+    {
+        ViewData.TemplateInfo.HtmlFieldPrefix = ViewContext.RequestContext.RouteData.DataTokens[Consts.RouteServiceKey] + "." + ViewData.TemplateInfo.HtmlFieldPrefix;
+    }
+}
+
+<div>
+    @Html.LabelFor(m => m)
+</div>
+
+@if (!string.IsNullOrEmpty(ViewData.ModelMetadata.Description))
+{
+    <div>
+        @ViewData.ModelMetadata.Description
+    </div>
+}
+
+<div>
+    @Html.DisplayFor(m => m)
+</div>

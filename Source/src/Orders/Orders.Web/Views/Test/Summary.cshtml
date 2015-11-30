@@ -1,0 +1,29 @@
+﻿@model HomeManager.Orders.Web.Models.TestUrlModel
+
+<h3>Begin orders summary</h3>
+
+<div>
+    Url in action: @Model.UrlInvocation
+    <br/>
+    Generated in action: @Model.GeneratedActionUrl
+    <br/>
+    Should be in action: @Model.ShouldBeActionUrl
+</div>
+<br/>
+<div>
+    Url in view: Url.Action("CustomerDetails", new {area = "", _external_ = true})
+    <br/>
+    Generated in view: @Url.Action("CustomerDetails", new {area = "", _external_ = true})
+    <br/>
+    Should be in view: /Test/CustomerDetails
+</div>
+<br/>
+<div>
+    Dependency result: @Model.DependencyResult
+</div>
+<br/>
+<div>
+    @Html.Action("CustomerDetails")
+</div>
+
+<h3>End orders summary</h3>

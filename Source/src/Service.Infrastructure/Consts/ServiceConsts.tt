@@ -1,0 +1,39 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+<#
+	var serviceNames = new [] {
+	"Customers",
+	"Orders",
+	"Products",
+	};
+#>
+namespace HomeManager.Service.Infrastructure.Consts
+{
+<#
+	var first = true;
+	foreach(var name in serviceNames)
+	{
+		if(!first)
+		{
+			WriteLine("");
+		}
+		else
+		{
+			first = false;
+		}
+#>
+	public class <#= name #>Consts
+	{
+		public static readonly string ServiceName = "<#= name #>Service";
+        public static readonly string ServiceBinFolder = "<#= name #>Service";
+        public static readonly string ServiceViewFolder = "<#= name #>Service";
+        public const string RouteServiceValue = "<#= name #>Service";
+	}
+<#
+	}
+#>
+}

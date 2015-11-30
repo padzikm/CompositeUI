@@ -1,0 +1,22 @@
+﻿@model Enum
+
+@{
+    var type = Model.GetType();
+    var names = Enum.GetNames(type);
+    var list = names.Select(p => new SelectListItem()
+    {
+        Selected = Model.Equals(Enum.Parse(type, p)),
+        Value = p,
+        Text = p,
+    }).ToList();
+    if (!list.Any(p => p.Selected))
+    {
+        var defaultItem = new SelectListItem()
+        {
+            Selected = true,
+        };
+        list.Insert(0, defaultItem);
+    }
+}
+
+@Html.DropDownListFor(p => p, list)

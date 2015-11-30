@@ -1,0 +1,15 @@
+﻿@using HomeManager.Web.Common.UIKeys
+@model IDictionary<string,HomeManager.Service.Infrastructure.ViewModels.IViewModel>
+
+@{
+    ViewBag.Title = "title";
+}
+
+<h2>main summary</h2>
+
+<div style="display: inline-block;">
+    @Model[UIKeysTest.Summary.CustomersDiv].Execute(this)
+</div>
+<div style="display: inline-block;">
+    @Model[UIKeysTest.Summary.OrdersDiv].Execute(this)
+</div>

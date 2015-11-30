@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NServiceBus.ObjectBuilder.CastleWindsor</name>
+    </assembly>
+    <members>
+        <member name="T:NServiceBus.WindsorBuilder">
+            <summary>
+            Windsor Container
+            </summary>
+        </member>
+        <member name="M:NServiceBus.WindsorBuilder.CreateContainer(NServiceBus.Settings.ReadOnlySettings)">
+            <summary>
+                Implementers need to new up a new container.
+            </summary>
+            <param name="settings">The settings to check if an existing container exists.</param>
+            <returns>The new container wrapper.</returns>
+        </member>
+        <member name="T:NServiceBus.WindsorExtensions">
+            <summary>
+            Windsor extension to pass an existing Windsor container instance.
+            </summary>
+        </member>
+        <member name="M:NServiceBus.WindsorExtensions.ExistingContainer(NServiceBus.Container.ContainerCustomizations,Castle.Windsor.IWindsorContainer)">
+            <summary>
+            Use a pre-configured native Windsor container.
+            </summary>
+            <param name="customizations"></param>
+            <param name="container">The existing container instance.</param>
+        </member>
+    </members>
+</doc>

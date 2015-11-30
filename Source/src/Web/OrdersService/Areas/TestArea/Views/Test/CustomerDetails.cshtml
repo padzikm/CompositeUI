@@ -1,0 +1,52 @@
+﻿@using HomeManager.Service.Infrastructure.Consts
+@model HomeManager.Orders.Web.Models.TestUrlModel
+
+<h3>Begin orders customer_details</h3>
+
+<div>
+    Url in action: @Model.UrlInvocation
+    <br/>
+    Generated in action: @Model.GeneratedActionUrl
+    <br/>
+    Should be in action: @Model.ShouldBeActionUrl
+</div>
+<br/>
+<div>
+    Url in view: Url.Action("AddCustomer")
+    <br/>
+    Generated in view: @Url.Action("AddCustomer")
+    <br/>
+    Should be in view: /@OrdersConsts.ServiceName/TestArea/Test/AddCustomer
+</div>
+<br/>
+<div>
+    Dependency result: @Model.DependencyResult
+</div>
+<br/>
+<div>
+    <h3>
+        Begin orders add_customer_ajax
+    </h3>
+    <div id="orders_ajax"></div>
+    <h3>
+        End orders add_customer_ajax
+    </h3>
+</div>
+
+<h3>End orders customer_details</h3>
+
+<script type="text/javascript">
+    $(function() {
+        $.ajax({
+            method: "GET",
+            url: "@Url.Action("AddCustomer")",
+            success: function (data) {
+                console.log(data);
+                var str = "";
+                for (var key in data)
+                    str += key + ": " + data[key] + "<br/>";
+                $("#orders_ajax").append(str);
+            }
+        });
+    });
+</script>
