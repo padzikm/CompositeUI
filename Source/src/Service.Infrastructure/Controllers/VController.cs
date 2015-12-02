@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 using System.Transactions;
 using System.Web.Mvc;
 using HomeManager.Service.Infrastructure.Exceptions;
+using HomeManager.Service.Infrastructure.Models;
 using HomeManager.Service.Infrastructure.RequestHandlers;
 using HomeManager.Service.Infrastructure.ViewModels;
 
 namespace HomeManager.Service.Infrastructure.Controllers
 {
-    public class VController : VMController
+    public class VController : Controller
     {
         protected readonly IEnumerable<IRequestHandler> _requestHandlers;
 
@@ -88,7 +89,9 @@ namespace HomeManager.Service.Infrastructure.Controllers
 
             var list = await Task.WhenAll(tasks);
             var union = list.SelectMany(p => p.ToList()).ToList();
-            return union.ToDictionary(p => p.Id);
+            var dict = union.ToDictionary(p => p.Id);
+            UpdateServicePublicDataRequests(union);
+            return dict;
         }
 
         public async Task<IDictionary<string, IViewModel>> GenerateViewModelsOnInvalidModelState(Type resourceClass)
@@ -100,7 +103,9 @@ namespace HomeManager.Service.Infrastructure.Controllers
 
             var list = await Task.WhenAll(tasks);
             var union = list.SelectMany(p => p.ToList()).ToList();
-            return union.ToDictionary(p => p.Id);
+            var dict = union.ToDictionary(p => p.Id);
+            UpdateServicePublicDataRequests(union);
+            return dict;
         }
 
         public IEnumerable<string> GetUIKeys(Type resourceClass)
@@ -108,6 +113,43 @@ namespace HomeManager.Service.Infrastructure.Controllers
             var fields = resourceClass.GetFields(BindingFlags.Public | BindingFlags.Static);
             var list = fields.Select(p => (string)p.GetValue(null)).ToList();
             return list;
+        }
+
+        protected override void OnResultExecuted(ResultExecutedContext filterContext)
+        {
+            RemoveServicePublicDataRequests();
+            base.OnResultExecuted(filterContext);
+        }
+
+        private void UpdateServicePublicDataRequests(IEnumerable<IViewModel> viewModels)
+        {
+            foreach (var viewModel in viewModels)
+            {
+                var requests = viewModel.ServiceBreadcrumbsRequests;
+                foreach (var pair in requests)
+                {
+                    if (!TempData.ContainsKey(pair.Key))
+                        TempData[pair.Key] = new List<ServicePublicData>(pair.Value);
+                    else
+                    {
+                        var list = TempData[pair.Key] as List<ServicePublicData>;
+                        list.AddRange(pair.Value);
+                    }
+                }
+            }
+        }
+
+        private void RemoveServicePublicDataRequests()
+        {
+            var keysToRemove = new List<string>();
+            foreach (var pair in TempData)
+            {
+                var list = pair.Value as List<ServicePublicData>;
+                if (list != null)
+                    keysToRemove.Add(pair.Key);
+            }
+            foreach (var key in keysToRemove)
+                TempData.Remove(key);
         }
     }
 }

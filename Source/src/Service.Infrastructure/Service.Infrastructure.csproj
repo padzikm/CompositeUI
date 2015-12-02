@@ -83,10 +83,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ServiceConsts.tt</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\ServiceUrlHelper.cs" />
     <Compile Include="Exceptions\InvalidModelException.cs" />
     <Compile Include="Filters\ServiceExceptionFilter.cs" />
     <Compile Include="Consts\Consts.cs" />
+    <Compile Include="Models\ServicePublicData.cs" />
     <Compile Include="RequestHandlers\ServiceRequestHandler.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

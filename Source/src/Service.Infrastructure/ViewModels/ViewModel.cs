@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using System.Web.Mvc.Html;
 using System.Web.Routing;
 using HomeManager.Infrastructure;
+using HomeManager.Service.Infrastructure.Models;
 
 namespace HomeManager.Service.Infrastructure.ViewModels
 {
@@ -29,10 +30,18 @@ namespace HomeManager.Service.Infrastructure.ViewModels
 
         public string Id { get; private set; }
 
+        public Dictionary<string, List<ServicePublicData>> ServiceBreadcrumbsRequests { get; private set; }
+
         public ViewModel(string id, Expression<Func<WebViewPage, MvcHtmlString>> action)
         {
             Id = id;
             _action = action;
+            ServiceBreadcrumbsRequests = new Dictionary<string, List<ServicePublicData>>();
+        }
+
+        public ViewModel(string id, Expression<Func<WebViewPage, MvcHtmlString>> action, Dictionary<string, List<ServicePublicData>> serviceBreadcrumbsRequests) : this(id, action)
+        {
+            ServiceBreadcrumbsRequests = serviceBreadcrumbsRequests;
         }
 
         public MvcHtmlString Execute(WebViewPage viewPage)
