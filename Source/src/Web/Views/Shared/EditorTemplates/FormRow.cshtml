@@ -4,7 +4,7 @@
 
 @{
     Html.ViewDataContainer.ViewData.TemplateInfo.RemoveFromVisited(ViewData);
-    if (ViewContext.RequestContext.RouteData.DataTokens.ContainsKey(Consts.RouteServiceKey))
+    if (ViewContext.RequestContext.RouteData.DataTokens.ContainsKey(Consts.RouteServiceKey) && !ViewData.ContainsKey("_includePrefix"))
     {
         ViewData.TemplateInfo.HtmlFieldPrefix = ViewContext.RequestContext.RouteData.DataTokens[Consts.RouteServiceKey] + "." + ViewData.TemplateInfo.HtmlFieldPrefix;
     }

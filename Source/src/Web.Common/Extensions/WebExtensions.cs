@@ -9,11 +9,6 @@ namespace HomeManager.Web.Common.Extensions
 {
     public static class WebExtensions
     {
-        //public static string AsViewDataKey(this DictionaryType dictionary)
-        //{
-        //    return dictionary.ToString() + "Items";
-        //}
-
         public static void RemoveFromVisited(this TemplateInfo templateInfo, ViewDataDictionary viewData)
         {
             var visitedObjects = GetVisitedObjects(templateInfo);
@@ -40,6 +35,11 @@ namespace HomeManager.Web.Common.Extensions
         public static MvcHtmlString Edit<TModel, TValue>(this HtmlHelper<TModel> html, Expression<Func<TModel, TValue>> expression)
         {
             return html.EditorFor(expression, "FormRow");
+        }
+
+        public static MvcHtmlString EditPublic<TModel, TValue>(this HtmlHelper<TModel> html, Expression<Func<TModel, TValue>> expression)
+        {
+            return html.EditorFor(expression, "FormRow", new { _includePrefix = false });
         }
 
         public static MvcHtmlString Display<TModel, TValue>(this HtmlHelper<TModel> html, Expression<Func<TModel, TValue>> expression)
