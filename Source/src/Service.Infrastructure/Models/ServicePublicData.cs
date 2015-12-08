@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace HomeManager.Service.Infrastructure.Models
+namespace CompositeUI.Service.Infrastructure.Models
 {
     public class ServicePublicData
     {
@@ -8,6 +8,6 @@ namespace HomeManager.Service.Infrastructure.Models
 
         public string Status { get; set; }
 
-        public DateTime DateTime { get; set; }
+        public DateTime? DateTime { get; set; }
     }
 }

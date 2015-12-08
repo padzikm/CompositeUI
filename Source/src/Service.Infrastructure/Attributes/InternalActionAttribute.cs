@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using System.Web.Mvc;
 
-namespace HomeManager.Service.Infrastructure.Attributes
+namespace CompositeUI.Service.Infrastructure.Attributes
 {
     public class InternalActionAttribute : ActionMethodSelectorAttribute
     {

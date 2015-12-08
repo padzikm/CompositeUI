@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace HomeManager.Service.Infrastructure.ViewEngines
+namespace CompositeUI.Service.Infrastructure.ViewEngines
 {
     public abstract class ViewEngine : RazorViewEngine
     {
@@ -10,8 +10,8 @@ namespace HomeManager.Service.Infrastructure.ViewEngines
         {
             var searchedEngine = RouteServiceValue + "_ViewEngine";
             var notFound = new ViewEngineResult(new[] { searchedEngine });
-            if (controllerContext.RouteData.DataTokens.ContainsKey(Consts.Consts.RouteServiceKey))
-                return (string)controllerContext.RouteData.DataTokens[Consts.Consts.RouteServiceKey] == RouteServiceValue ? base.FindPartialView(controllerContext, partialViewName, useCache) : notFound;
+            if (controllerContext.RouteData.DataTokens.ContainsKey(CompositeUI.Service.Infrastructure.Consts.Consts.RouteServiceKey))
+                return (string)controllerContext.RouteData.DataTokens[CompositeUI.Service.Infrastructure.Consts.Consts.RouteServiceKey] == RouteServiceValue ? base.FindPartialView(controllerContext, partialViewName, useCache) : notFound;
             return notFound;
         }
 
@@ -19,8 +19,8 @@ namespace HomeManager.Service.Infrastructure.ViewEngines
         {
             var searchedEngine = RouteServiceValue + "_ViewEngine";
             var notFound = new ViewEngineResult(new[] { searchedEngine });
-            if (controllerContext.RouteData.DataTokens.ContainsKey(Consts.Consts.RouteServiceKey))
-                return (string)controllerContext.RouteData.DataTokens[Consts.Consts.RouteServiceKey] == RouteServiceValue ? base.FindView(controllerContext, viewName, masterName, useCache) : notFound;
+            if (controllerContext.RouteData.DataTokens.ContainsKey(CompositeUI.Service.Infrastructure.Consts.Consts.RouteServiceKey))
+                return (string)controllerContext.RouteData.DataTokens[CompositeUI.Service.Infrastructure.Consts.Consts.RouteServiceKey] == RouteServiceValue ? base.FindView(controllerContext, viewName, masterName, useCache) : notFound;
             return notFound;
         }
     }

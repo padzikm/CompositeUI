@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
-using HomeManager.Service.Infrastructure.Filters;
+using CompositeUI.Service.Infrastructure.Filters;
 
-namespace HomeManager.Web
+namespace CompositeUI.Web
 {
     public class FilterConfig
     {

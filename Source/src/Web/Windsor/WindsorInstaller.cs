@@ -2,10 +2,10 @@
 using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
-using HomeManager.Infrastructure;
-using HomeManager.Web.Common.Metadata;
+using CompositeUI.Infrastructure;
+using CompositeUI.Web.Common.Metadata;
 
-namespace HomeManager.Web.Windsor
+namespace CompositeUI.Web.Windsor
 {
     public class WindsorInstaller : IWindsorInstaller
     {
@@ -41,14 +41,14 @@ namespace HomeManager.Web.Windsor
         private void RegisterAllPublicClasses(IWindsorContainer container)
         {
             container.Register(
-                Classes.FromAssemblyInDirectory(new AssemblyFilter(_path).FilterByName(p => p.Name.StartsWith("HomeManager") && !p.Name.StartsWith("HomeManager.Web")))
+                Classes.FromAssemblyInDirectory(new AssemblyFilter(_path).FilterByName(p => p.Name.StartsWith("CompositeUI") && !p.Name.StartsWith("CompositeUI.Web")))
                     .Pick()
                     .Unless(p => typeof(IApplicationConfiguration).IsAssignableFrom(p))
                     .WithService.AllInterfaces()
                     .LifestylePerWebRequest());
 
             container.Register(
-                Classes.FromAssemblyInDirectory(new AssemblyFilter(_path).FilterByName(p => p.Name.StartsWith("HomeManager")))
+                Classes.FromAssemblyInDirectory(new AssemblyFilter(_path).FilterByName(p => p.Name.StartsWith("CompositeUI")))
                     .BasedOn<IApplicationConfiguration>()
                     .WithService.AllInterfaces());
         }

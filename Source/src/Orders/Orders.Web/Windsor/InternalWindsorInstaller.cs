@@ -2,9 +2,9 @@
 using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
-using HomeManager.Infrastructure;
+using CompositeUI.Infrastructure;
 
-namespace HomeManager.Orders.Web.Windsor
+namespace CompositeUI.Orders.Web.Windsor
 {
     internal class InternalWindsorInstaller : IWindsorInstaller
     {
@@ -30,14 +30,14 @@ namespace HomeManager.Orders.Web.Windsor
         private void RegisterAllPublicClasses(IWindsorContainer container)
         {
             container.Register(
-                Classes.FromAssemblyInDirectory(new AssemblyFilter(_path).FilterByName(p => p.Name.StartsWith("HomeManager") && !p.Name.StartsWith("HomeManager.Orders.Web")))
+                Classes.FromAssemblyInDirectory(new AssemblyFilter(_path).FilterByName(p => p.Name.StartsWith("CompositeUI") && !p.Name.StartsWith("CompositeUI.Orders.Web")))
                     .Pick()
                     .Unless(p => typeof(IApplicationConfiguration).IsAssignableFrom(p))
                     .WithService.AllInterfaces()
                     .LifestylePerWebRequest());
 
             container.Register(
-                Classes.FromAssemblyInDirectory(new AssemblyFilter(_path).FilterByName(p => p.Name.StartsWith("HomeManager") && !p.Name.StartsWith("HomeManager.Orders.Web")))
+                Classes.FromAssemblyInDirectory(new AssemblyFilter(_path).FilterByName(p => p.Name.StartsWith("CompositeUI") && !p.Name.StartsWith("CompositeUI.Orders.Web")))
                     .BasedOn<IApplicationConfiguration>()
                     .WithService.AllInterfaces());
         }

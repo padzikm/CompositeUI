@@ -1,0 +1,23 @@
+﻿@using CompositeUI.Web.Common.UIKeys
+@model IDictionary<string, CompositeUI.Service.Infrastructure.ViewModels.IViewModel>
+
+@{
+    ViewBag.Title = "title";
+}
+
+<h2>Create product</h2>
+
+@using (Html.BeginForm())
+{
+    <div>
+        <input type="hidden" name="productId" value="@ViewBag.ProductId" />
+    </div>
+    <div>
+        @Model[UIKeysProductDrafts.Add.ProductCategorySelect].Execute(this)
+    </div>
+    <div>
+        @Model[UIKeysProductDrafts.Add.ProductDataDiv].Execute(this)
+    </div>
+    <br/>
+    <input id="submitBtn" type="submit" value="Send">
+}

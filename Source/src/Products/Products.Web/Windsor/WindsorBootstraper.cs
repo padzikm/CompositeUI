@@ -5,11 +5,11 @@ using Castle.MicroKernel.Resolvers.SpecializedResolvers;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
 using Castle.Windsor.Installer;
-using HomeManager.Infrastructure;
-using HomeManager.Service.Infrastructure.Consts;
+using CompositeUI.Infrastructure;
+using CompositeUI.Service.Infrastructure.Consts;
 using NServiceBus;
 
-namespace HomeManager.Products.Web.Windsor
+namespace CompositeUI.Products.Web.Windsor
 {
     public class WindsorBootstraper : ServiceWindsorInstaller
     {
@@ -27,7 +27,7 @@ namespace HomeManager.Products.Web.Windsor
             var path = GetProjectPath();
 
             ConfigureContainer(path);
-            ConfigureNServiceBus();
+            //ConfigureNServiceBus();
 
             container.Install(new ExternalWindsorInstaller(path, _container));
         }
@@ -49,7 +49,7 @@ namespace HomeManager.Products.Web.Windsor
                         container.Install(
                             FromAssembly.InDirectory(
                                 new AssemblyFilter(path).FilterByName(
-                                    p => p.Name.StartsWith("HomeManager") && !p.Name.StartsWith("HomeManager.Products.Web"))),
+                                    p => p.Name.StartsWith("CompositeUI") && !p.Name.StartsWith("CompositeUI.Products.Web"))),
                             new InternalWindsorInstaller(path));
                         _container = container;
                     }
@@ -69,7 +69,7 @@ namespace HomeManager.Products.Web.Windsor
                     {
                         var busConfiguration = new BusConfiguration();
                         busConfiguration.UsePersistence<InMemoryPersistence>();
-                        busConfiguration.EndpointName("HomeManager.Products.Web");
+                        busConfiguration.EndpointName("CompositeUI.Products.Web");
                         busConfiguration.UseTransport<MsmqTransport>();
                         busConfiguration.EnableInstallers();
                         busConfiguration.UseContainer<WindsorBuilder>(p => p.ExistingContainer(_container));

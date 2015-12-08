@@ -1,8 +1,8 @@
 ﻿using System.Web.Mvc;
 using System.Web.Routing;
-using HomeManager.Web.Infrastructure;
+using CompositeUI.Web.Infrastructure;
 
-namespace HomeManager.Web
+namespace CompositeUI.Web
 {
     public class RouteConfig
     {
@@ -12,7 +12,7 @@ namespace HomeManager.Web
 
             routes.CreateRoute(
                 name: "Default",
-                namespaces: new[] { "HomeManager.Web.Controllers" },
+                namespaces: new[] { "CompositeUI.Web.Controllers" },
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );

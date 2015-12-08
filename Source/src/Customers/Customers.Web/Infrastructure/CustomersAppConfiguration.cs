@@ -1,7 +1,7 @@
-﻿using HomeManager.Customers.Web.Windsor;
-using HomeManager.Infrastructure;
+﻿using CompositeUI.Customers.Web.Windsor;
+using CompositeUI.Infrastructure;
 
-namespace HomeManager.Customers.Web.Infrastructure
+namespace CompositeUI.Customers.Web.Infrastructure
 {
     public class CustomersAppConfiguration : IApplicationConfiguration
     {

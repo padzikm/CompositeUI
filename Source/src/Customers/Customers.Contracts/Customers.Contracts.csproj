@@ -7,8 +7,8 @@
     <ProjectGuid>{DF3C5EE4-E84F-4B5C-8C4E-E3EF2D10834B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HomeManager.Customers.Contracts</RootNamespace>
-    <AssemblyName>HomeManager.Customers.Contracts</AssemblyName>
+    <RootNamespace>CompositeUI.Customers.Contracts</RootNamespace>
+    <AssemblyName>CompositeUI.Customers.Contracts</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

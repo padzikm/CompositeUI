@@ -1,7 +1,7 @@
 ﻿using System;
 using NServiceBus;
 
-namespace HomeManager.Customers.Contracts.Commands
+namespace CompositeUI.Customers.Contracts.Commands
 {
     public class CreateCustomer : ICommand
     {

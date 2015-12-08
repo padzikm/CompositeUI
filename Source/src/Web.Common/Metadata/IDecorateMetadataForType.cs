@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web.Mvc;
 
-namespace HomeManager.Web.Common.Metadata
+namespace CompositeUI.Web.Common.Metadata
 {
     public interface IDecorateMetadataForType
     {

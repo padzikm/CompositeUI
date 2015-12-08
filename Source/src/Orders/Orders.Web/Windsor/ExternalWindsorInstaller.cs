@@ -2,12 +2,12 @@
 using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
-using HomeManager.Infrastructure;
-using HomeManager.Service.Infrastructure.Controllers;
-using HomeManager.Service.Infrastructure.RequestHandlers;
-using HomeManager.Service.Infrastructure.ViewEngines;
+using CompositeUI.Infrastructure;
+using CompositeUI.Service.Infrastructure.Controllers;
+using CompositeUI.Service.Infrastructure.RequestHandlers;
+using CompositeUI.Service.Infrastructure.ViewEngines;
 
-namespace HomeManager.Orders.Web.Windsor
+namespace CompositeUI.Orders.Web.Windsor
 {
     internal class ExternalWindsorInstaller : IWindsorInstaller
     {

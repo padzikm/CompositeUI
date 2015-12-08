@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Web.Mvc;
 using System.Web.Routing;
-using HomeManager.Service.Infrastructure.Consts;
+using CompositeUI.Service.Infrastructure.Consts;
 
-namespace HomeManager.Service.Infrastructure.Routing
+namespace CompositeUI.Service.Infrastructure.Routing
 {
 	internal class CustomersInternalRouteConfig
     {
@@ -24,14 +24,14 @@ namespace HomeManager.Service.Infrastructure.Routing
                 "TestArea_default",
                 "TestArea/{controller}/{action}/{id}",
                 new {action = "Index", id = UrlParameter.Optional},
-                new[] {"HomeManager.Customers.Web.Areas.TestArea.Controllers"}
+                new[] {"CompositeUI.Customers.Web.Areas.TestArea.Controllers"}
                 );
             route.DataTokens["area"] = "TestArea";
             yield return route;
 
             route = routes.MapRoute(
                 name: "Default",
-                namespaces: new[] { "HomeManager.Customers.Web.Controllers" },
+                namespaces: new[] { "CompositeUI.Customers.Web.Controllers" },
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
@@ -59,14 +59,14 @@ namespace HomeManager.Service.Infrastructure.Routing
                 "TestArea_default",
                 "TestArea/{controller}/{action}/{id}",
                 new {action = "Index", id = UrlParameter.Optional},
-                new[] {"HomeManager.Orders.Web.Areas.TestArea.Controllers"}
+                new[] {"CompositeUI.Orders.Web.Areas.TestArea.Controllers"}
                 );
             route.DataTokens["area"] = "TestArea";
             yield return route;
 
             route = routes.MapRoute(
                 name: "Default",
-                namespaces: new[] { "HomeManager.Orders.Web.Controllers" },
+                namespaces: new[] { "CompositeUI.Orders.Web.Controllers" },
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
@@ -94,14 +94,14 @@ namespace HomeManager.Service.Infrastructure.Routing
                 "TestArea_default",
                 "TestArea/{controller}/{action}/{id}",
                 new {action = "Index", id = UrlParameter.Optional},
-                new[] {"HomeManager.Products.Web.Areas.TestArea.Controllers"}
+                new[] {"CompositeUI.Products.Web.Areas.TestArea.Controllers"}
                 );
             route.DataTokens["area"] = "TestArea";
             yield return route;
 
             route = routes.MapRoute(
                 name: "Default",
-                namespaces: new[] { "HomeManager.Products.Web.Controllers" },
+                namespaces: new[] { "CompositeUI.Products.Web.Controllers" },
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );

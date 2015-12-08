@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Web.Mvc;
 
-namespace HomeManager.Web.Common.Metadata
+namespace CompositeUI.Web.Common.Metadata
 {
     public class DataAnnotationsModelMetadataProviderDecorator : DataAnnotationsModelMetadataProvider
     {

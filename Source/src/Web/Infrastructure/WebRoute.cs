@@ -1,7 +1,7 @@
 ﻿using System.Web.Routing;
-using HomeManager.Service.Infrastructure.Consts;
+using CompositeUI.Service.Infrastructure.Consts;
 
-namespace HomeManager.Web.Infrastructure
+namespace CompositeUI.Web.Infrastructure
 {
     public class WebRoute : Route
     {

@@ -1,0 +1,29 @@
+﻿@using CompositeUI.Service.Infrastructure.Consts
+@using CompositeUI.Web.Common.UIKeys
+
+<script type="text/javascript">
+    function @(UIKeysProductDrafts.IndexDiff.ProductAuthorColumn)(id, data) {
+        for (var i = 0, len = data.length; i < len; ++i) {
+            if (data[i].Name === "@ProductsConsts.RouteServiceValue") {
+                for (var j = 0, llen = data[i].Object.length; j < llen; ++j) {
+                    var obj = data[i].Object[j];
+                    if (obj.id === id)
+                        return obj.author;
+                }
+            }
+        }
+    };
+
+    function @(UIKeysProductDrafts.IndexDiff.ProductTitleColumn)(id, data) {
+        for (var i = 0, len = data.length; i < len; ++i) {
+            if (data[i].Name === "@ProductsConsts.RouteServiceValue") {
+                for (var j = 0, llen = data[i].Object.length; j < llen; ++j) {
+                    var obj = data[i].Object[j];
+                    if (obj.id === id)
+                        return obj.title;
+                }
+            }
+        }
+    };
+</script>
+

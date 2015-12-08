@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Web.Mvc;
 
-namespace HomeManager.Web.Common.Validators
+namespace CompositeUI.Web.Common.Validators
 {
     public class EnumValidator : ModelValidator
     {

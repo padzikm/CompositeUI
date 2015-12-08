@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HomeManager.Web</RootNamespace>
-    <AssemblyName>HomeManager.Web</AssemblyName>
+    <RootNamespace>CompositeUI.Web</RootNamespace>
+    <AssemblyName>CompositeUI.Web</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -127,6 +127,8 @@
     <Compile Include="Areas\TestArea\Controllers\TestController.cs" />
     <Compile Include="Areas\TestArea\TestAreaAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductDraftsController.cs" />
+    <Compile Include="Controllers\PubSubCacheController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -159,6 +161,7 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery.pubsub.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -167,6 +170,8 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\PubSubCache\communicationEvents.js" />
+    <Content Include="Scripts\PubSubCache\networkingEvents.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
@@ -182,7 +187,6 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Shared\DisplayTemplates\FormRow.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\MultilineText.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\UList.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Enum.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Files.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\FormRow.cshtml" />
@@ -193,19 +197,29 @@
     <Content Include="Views\Test\AddCustomer.cshtml" />
     <Content Include="Views\Test\Summary.cshtml" />
     <None Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\MultiSelect.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\MultiSelect.cshtml" />
+    <None Include="Views\ProductDrafts\Add.cshtml" />
+    <None Include="Views\ProductDrafts\Edit.cshtml" />
+    <None Include="Views\ProductDrafts\Index.cshtml" />
+    <None Include="Views\ProductDrafts\IndexDiff.cshtml" />
+    <None Include="Views\ProductDrafts\IndexTable.cshtml" />
+    <None Include="Views\ProductDrafts\Preview.cshtml" />
+    <None Include="Views\PubSubCache\Communication.cshtml" />
+    <None Include="Views\PubSubCache\Networking.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
       <Project>{f3494be0-6f1d-4375-84f3-87afc4b70607}</Project>
       <Name>Infrastructure</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Web.Common\Web.Common.csproj">
-      <Project>{CDC629E6-7934-44E1-B41E-ED24DD8EEBA4}</Project>
-      <Name>Web.Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Service.Infrastructure\Service.Infrastructure.csproj">
       <Project>{BB4AC77B-F06B-45A8-AF92-FBBE8FCDE6B7}</Project>
       <Name>Service.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Web.Common\Web.Common.csproj">
+      <Project>{CDC629E6-7934-44E1-B41E-ED24DD8EEBA4}</Project>
+      <Name>Web.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

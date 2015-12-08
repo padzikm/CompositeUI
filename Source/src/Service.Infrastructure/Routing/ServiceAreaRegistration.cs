@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using System.Web.Routing;
-using HomeManager.Infrastructure;
+using CompositeUI.Infrastructure;
 
-namespace HomeManager.Service.Infrastructure.Routing
+namespace CompositeUI.Service.Infrastructure.Routing
 {
     public abstract class ServiceAreaRegistration : AreaRegistration
     {
@@ -43,7 +43,7 @@ namespace HomeManager.Service.Infrastructure.Routing
             route.DataTokens["area"] = (object)this.AreaName;
             bool flag = namespaces == null || namespaces.Length == 0;
             route.DataTokens["UseNamespaceFallback"] = (object)flag;
-            route.DataTokens[Consts.Consts.RouteServiceKey] = this.RouteServiceValue;
+            route.DataTokens[CompositeUI.Service.Infrastructure.Consts.Consts.RouteServiceKey] = this.RouteServiceValue;
             return route;
         }
 
@@ -55,7 +55,7 @@ namespace HomeManager.Service.Infrastructure.Routing
                 throw new ArgumentNullException("url");
             var route = new ServiceRoute(url, (IRouteHandler)new MvcRouteHandler())
             {
-                Defaults = CreateRouteValueDictionary(defaults),//outeCollectionExtensions.CreateRouteValueDictionaryUncached(defaults),
+                Defaults = CreateRouteValueDictionary(defaults),//RouteCollectionExtensions.CreateRouteValueDictionaryUncached(defaults),
                 Constraints = CreateRouteValueDictionary(constraints),//RouteCollectionExtensions.CreateRouteValueDictionaryUncached(constraints),
                 DataTokens = new RouteValueDictionary()
             };

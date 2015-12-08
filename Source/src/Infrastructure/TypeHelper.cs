@@ -4,7 +4,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Web.Routing;
 
-namespace HomeManager.Infrastructure
+namespace CompositeUI.Infrastructure
 {
     public static class TypeHelper
     {

@@ -1,4 +1,4 @@
-﻿namespace HomeManager.Customers.Web.Models
+﻿namespace CompositeUI.Customers.Web.Models
 {
     public class TestUrlModel
     {

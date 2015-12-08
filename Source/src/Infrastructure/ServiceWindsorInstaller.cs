@@ -2,7 +2,7 @@
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
 
-namespace HomeManager.Infrastructure
+namespace CompositeUI.Infrastructure
 {
     public abstract class ServiceWindsorInstaller : IWindsorInstaller
     {

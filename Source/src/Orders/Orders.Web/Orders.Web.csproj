@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HomeManager.Orders.Web</RootNamespace>
-    <AssemblyName>HomeManager.Orders.Web</AssemblyName>
+    <RootNamespace>CompositeUI.Orders.Web</RootNamespace>
+    <AssemblyName>CompositeUI.Orders.Web</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -98,16 +98,23 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Scripts\PubSubCache\communication.js" />
+    <Content Include="Scripts\PubSubCache\networking.js" />
     <Content Include="Web.config" />
+    <None Include="Scripts\_references.js" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Areas\TestArea\Controllers\TestController.cs" />
     <Compile Include="Areas\TestArea\TestAreaAreaRegistration.cs" />
+    <Compile Include="Controllers\ProductDraftsController.cs" />
+    <Compile Include="Controllers\PubSubCacheController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\OrdersAppConfiguration.cs" />
     <Compile Include="Infrastructure\OrdersAreaRegistration.cs" />
+    <Compile Include="Models\ProductModel.cs" />
     <Compile Include="Models\TestModel.cs" />
     <Compile Include="Models\TestUrlModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -125,6 +132,12 @@
     <Content Include="Areas\TestArea\Views\Test\AddCustomer.cshtml" />
     <Content Include="Areas\TestArea\Views\Test\CustomerDetails.cshtml" />
     <Content Include="Areas\TestArea\Views\Test\Summary.cshtml" />
+    <Content Include="Views\ProductDrafts\Add.cshtml" />
+    <Content Include="Views\ProductDrafts\Edit.cshtml" />
+    <Content Include="Views\ProductDrafts\Preview.cshtml" />
+    <Content Include="Views\PubSubCache\Communication.cshtml" />
+    <Content Include="Views\PubSubCache\Networking.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\MultiSelect.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -180,7 +193,8 @@
   <PropertyGroup>
     <PostBuildEvent>xcopy "$(TargetDir)*" “$(SolutionDir)src\Web\bin\OrdersService\” /s /i /y
 xcopy “$(ProjectDir)Views” “$(SolutionDir)src\Web\OrdersService\Views\” /s /i /y
-xcopy “$(ProjectDir)Areas” “$(SolutionDir)src\Web\OrdersService\Areas\” /s /i /y</PostBuildEvent>
+xcopy “$(ProjectDir)Areas” “$(SolutionDir)src\Web\OrdersService\Areas\” /s /i /y
+xcopy “$(ProjectDir)Scripts” “$(SolutionDir)src\Web\OrdersService\Scripts\” /s /i /y</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,0 +1,32 @@
+﻿@using CompositeUI.Web.Common.UIKeys
+@model IDictionary<string, CompositeUI.Service.Infrastructure.ViewModels.IViewModel>
+
+<h2>Edit product</h2>
+
+@using (Html.BeginForm())
+{
+    <div>
+        <input type="hidden" name="productId" value="@ViewBag.ProductId" />
+    </div>
+    <div>
+        @Model[UIKeysProductDrafts.Add.ProductCategorySelect].Execute(this)
+    </div>
+    <div>
+        @Model[UIKeysProductDrafts.Add.ProductDataDiv].Execute(this)
+    </div>
+    <br/>
+    <input id="submitBtn" type="submit" value="Send">
+    <button id="previewBtn">Preview</button>
+}
+
+<script type="text/javascript">
+    $(function() {
+        $("#previewBtn").click(function(e) {
+            e.preventDefault();
+            var formJson = $("form").serializeArray();
+            var url = "@Url.Action("Preview")";
+            var win = window.open(url, "_blank");
+            win.formJson = formJson;
+        });
+    });
+</script>

@@ -1,6 +1,6 @@
 ﻿using System.Web;
 
-namespace Customers.Web
+namespace CompositeUI.Customers.Web
 {
     public class MvcApplication : HttpApplication
     {

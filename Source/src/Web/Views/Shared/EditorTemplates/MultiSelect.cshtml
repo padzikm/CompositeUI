@@ -1,0 +1,17 @@
+﻿@using CompositeUI.Service.Infrastructure.Models
+@model IDictionary<string, string>
+
+@{
+    var name = ViewData.TemplateInfo.GetFullHtmlFieldName("");
+    var breadcrumbs = TempData[name] as List<ServicePublicData> ?? new List<ServicePublicData>();
+
+    var list = Model.Select(p => new SelectListItem()
+    {
+        Text = p.Value,
+        Value = p.Key,
+        Selected = breadcrumbs.Exists(q => q.Id == p.Key)
+    }).ToList();
+}
+
+@Html.ListBox("", list)
+

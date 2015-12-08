@@ -1,4 +1,4 @@
-﻿namespace HomeManager.Orders.Web
+﻿namespace CompositeUI.Orders.Web
 {
     public class MvcApplication : System.Web.HttpApplication
     {

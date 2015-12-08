@@ -14,9 +14,9 @@
 using System.Collections.Generic;
 using System.Web.Mvc;
 using System.Web.Routing;
-using HomeManager.Service.Infrastructure.Consts;
+using CompositeUI.Service.Infrastructure.Consts;
 
-namespace HomeManager.Service.Infrastructure.Routing
+namespace CompositeUI.Service.Infrastructure.Routing
 {
 <#
 	var first = true;
@@ -50,14 +50,14 @@ namespace HomeManager.Service.Infrastructure.Routing
                 "TestArea_default",
                 "TestArea/{controller}/{action}/{id}",
                 new {action = "Index", id = UrlParameter.Optional},
-                new[] {"HomeManager.<#= name #>.Web.Areas.TestArea.Controllers"}
+                new[] {"CompositeUI.<#= name #>.Web.Areas.TestArea.Controllers"}
                 );
             route.DataTokens["area"] = "TestArea";
             yield return route;
 
             route = routes.MapRoute(
                 name: "Default",
-                namespaces: new[] { "HomeManager.<#= name #>.Web.Controllers" },
+                namespaces: new[] { "CompositeUI.<#= name #>.Web.Controllers" },
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );

@@ -1,8 +1,8 @@
 ﻿using System;
-using HomeManager.Customers.Contracts.Commands;
+using CompositeUI.Customers.Contracts.Commands;
 using NServiceBus;
 
-namespace HomeManager.Customers.Service
+namespace CompositeUI.Customers.Service
 {
     public class CreateCustomerHandler : IHandleMessages<CreateCustomer>
     {

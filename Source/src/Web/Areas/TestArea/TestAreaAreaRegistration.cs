@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
-using HomeManager.Web.Infrastructure;
+using CompositeUI.Web.Infrastructure;
 
-namespace HomeManager.Web.Areas.TestArea
+namespace CompositeUI.Web.Areas.TestArea
 {
     public class TestAreaAreaRegistration : WebAreaRegistration 
     {

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace HomeManager.Orders.Web.Models
+namespace CompositeUI.Orders.Web.Models
 {
     public class TestModel
     {

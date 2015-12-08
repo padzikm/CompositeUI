@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace HomeManager.Infrastructure
+namespace CompositeUI.Infrastructure
 {
     internal class PropertyHelper
     {

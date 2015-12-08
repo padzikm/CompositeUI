@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
-using HomeManager.Infrastructure;
-using HomeManager.Orders.Web.Models;
-using HomeManager.Service.Infrastructure.Attributes;
-using HomeManager.Service.Infrastructure.Consts;
-using HomeManager.Service.Infrastructure.Controllers;
-using HomeManager.Service.Infrastructure.Exceptions;
-using HomeManager.Service.Infrastructure.ViewModels;
-using HomeManager.Web.Common.UIKeys.TestArea;
+using CompositeUI.Infrastructure;
+using CompositeUI.Orders.Web.Models;
+using CompositeUI.Service.Infrastructure.Attributes;
+using CompositeUI.Service.Infrastructure.Consts;
+using CompositeUI.Service.Infrastructure.Controllers;
+using CompositeUI.Service.Infrastructure.Exceptions;
+using CompositeUI.Service.Infrastructure.ViewModels;
+using CompositeUI.Web.Common.UIKeys.TestArea;
 
-namespace HomeManager.Orders.Web.Areas.TestArea.Controllers
+namespace CompositeUI.Orders.Web.Areas.TestArea.Controllers
 {
-    public class TestController : VMController
+    public class TestController : ServiceController
     {
         private readonly ImportantClass _importantClass;
 

@@ -4,7 +4,7 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using Castle.MicroKernel;
 
-namespace HomeManager.Web.Windsor
+namespace CompositeUI.Web.Windsor
 {
     public class WindsorControllerActivatorDecorator : IControllerActivator
     {

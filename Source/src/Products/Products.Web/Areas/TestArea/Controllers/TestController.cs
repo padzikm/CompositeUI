@@ -1,13 +1,13 @@
 ﻿using System.Web.Mvc;
 using System.Web.Mvc.Html;
-using HomeManager.Service.Infrastructure.Attributes;
-using HomeManager.Service.Infrastructure.Controllers;
-using HomeManager.Service.Infrastructure.ViewModels;
-using HomeManager.Web.Common.UIKeys.TestArea;
+using CompositeUI.Service.Infrastructure.Attributes;
+using CompositeUI.Service.Infrastructure.Controllers;
+using CompositeUI.Service.Infrastructure.ViewModels;
+using CompositeUI.Web.Common.UIKeys.TestArea;
 
-namespace HomeManager.Products.Web.Areas.TestArea.Controllers
+namespace CompositeUI.Products.Web.Areas.TestArea.Controllers
 {
-    public class TestController : VMController
+    public class TestController : ServiceController
     {
         [InternalAction]
         [GetAndReplayPost]

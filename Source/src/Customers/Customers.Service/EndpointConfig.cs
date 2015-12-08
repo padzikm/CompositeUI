@@ -1,6 +1,6 @@
 using NServiceBus;
 
-namespace HomeManager.Customers.Service
+namespace CompositeUI.Customers.Service
 {
     /*
 		This class configures this endpoint as a Server. More information about how to configure the NServiceBus host
@@ -21,7 +21,7 @@ namespace HomeManager.Customers.Service
             //http://docs.particular.net/nservicebus/persistence-order
             configuration.UsePersistence<InMemoryPersistence>();
             configuration.UseTransport<MsmqTransport>();
-            configuration.EndpointName("HomeManager.Customers.Service");
+            configuration.EndpointName("CompositeUI.Customers.Service");
             configuration.EnableInstallers();
         }
     }

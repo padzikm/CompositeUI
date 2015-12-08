@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Web.Mvc;
-using HomeManager.Service.Infrastructure.Models;
+using CompositeUI.Service.Infrastructure.Models;
 
-namespace HomeManager.Service.Infrastructure.ViewModels
+namespace CompositeUI.Service.Infrastructure.ViewModels
 {
     public interface IViewModel
     {
@@ -11,5 +11,7 @@ namespace HomeManager.Service.Infrastructure.ViewModels
         Dictionary<string, List<ServicePublicData>> ServiceBreadcrumbsRequests { get; }
 
         MvcHtmlString Execute(WebViewPage viewPage);
+
+        MvcHtmlString Execute(WebViewPage viewPage, string containerId);
     }
 }

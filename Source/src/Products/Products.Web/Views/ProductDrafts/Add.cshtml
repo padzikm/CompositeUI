@@ -1,0 +1,21 @@
+﻿@using CompositeUI.Web.Common.Extensions
+@model CompositeUI.Products.Web.Models.Product
+
+@Html.Edit(p => p.Title)
+@Html.Edit(p => p.Author)
+@Html.Edit(p => p.Description)
+
+<script type="text/javascript">
+    $(function () {
+        $("[name='ProductCategories']").rules("add", { "productServiceProductCategories": true, messages: { "productServiceProductCategories": "Select at least one category" } });
+
+        jQuery.validator.unobtrusive.adapters.addBool("productServiceProductCategories");
+
+        jQuery.validator.addMethod("productServiceProductCategories", function (value, element, params) {
+            if (value === null || value.length === 0)
+                return false;
+            return true;
+        });
+    });
+</script>
+

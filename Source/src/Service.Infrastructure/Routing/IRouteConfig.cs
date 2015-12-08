@@ -1,6 +1,6 @@
 ﻿using System.Web.Routing;
 
-namespace HomeManager.Service.Infrastructure.Routing
+namespace CompositeUI.Service.Infrastructure.Routing
 {
     public interface IRouteConfig
     {

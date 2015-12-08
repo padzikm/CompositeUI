@@ -1,4 +1,4 @@
-﻿namespace HomeManager.Service.Infrastructure.Consts
+﻿namespace CompositeUI.Service.Infrastructure.Consts
 {
 	public class CustomersConsts
 	{

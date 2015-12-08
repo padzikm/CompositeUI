@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using Castle.MicroKernel;
-using Castle.MicroKernel.Lifestyle;
 using IDependencyResolver = System.Web.Mvc.IDependencyResolver;
 
-namespace HomeManager.Web.Windsor
+namespace CompositeUI.Web.Windsor
 {
     public class WindsorDependencyResolver : IDependencyResolver
     {

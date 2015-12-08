@@ -1,8 +1,8 @@
 ﻿using System.Web;
-using HomeManager.Customers.Web.Infrastructure;
+using CompositeUI.Customers.Web.Infrastructure;
 
 [assembly: PreApplicationStartMethod(typeof(CustomersModuleRegistration), "RegisterModule")]
-namespace HomeManager.Customers.Web.Infrastructure
+namespace CompositeUI.Customers.Web.Infrastructure
 {
     public class CustomersModuleRegistration
     {

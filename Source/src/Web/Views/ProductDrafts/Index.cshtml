@@ -1,0 +1,34 @@
+﻿@using CompositeUI.Web.Common.UIKeys
+@model IDictionary<string, CompositeUI.Service.Infrastructure.ViewModels.IViewModel>
+
+@{
+    ViewBag.Title = "title";
+}
+
+<h2>Products table ajax</h2>
+
+<div id="table"></div>
+<br/>
+<div>@Html.ActionLink("New product", "Add")</div>
+
+<script type="text/javascript">
+    $(function () {
+        $.ajax({
+            method: "GET",
+            url: "@Url.Action("IndexTable", new { key = Model[UIKeysProductDrafts.Index.ProductTableOrder].Id })",
+            success: function (data) {
+                $("#table").append(data);
+            },
+            error: function () {
+                $.ajax({
+                    method: "GET",
+                    url: "@Url.Action("IndexTable", new { key = Model[UIKeysProductDrafts.Index.ProductTableOrder].Id })",
+                    data: "@Html.Raw(ViewData[Model[UIKeysProductDrafts.Index.ProductTableOrder].Id])",
+                    success: function (data) {
+                        $("#table").append(data);
+                    }
+                });
+            }
+        });
+    });
+</script>

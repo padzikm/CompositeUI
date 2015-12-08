@@ -1,0 +1,12 @@
+﻿@using CompositeUI.Web.Common.UIKeys
+@model IDictionary<string,CompositeUI.Service.Infrastructure.ViewModels.IViewModel>
+
+<h2>Preview</h2>
+
+<div id="productsSelect">
+    @Model[UIKeysProductDrafts.Preview.ProductCategorySelect].Execute(this, "productsSelect")
+</div>
+
+<div id="productsData">
+    @Model[UIKeysProductDrafts.Preview.ProductDataDiv].Execute(this, "productsData")
+</div>

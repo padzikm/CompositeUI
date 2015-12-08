@@ -1,19 +1,19 @@
 ﻿using System;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
-using HomeManager.Customers.Contracts.Commands;
-using HomeManager.Customers.Web.Models;
-using HomeManager.Infrastructure;
-using HomeManager.Service.Infrastructure.Attributes;
-using HomeManager.Service.Infrastructure.Consts;
-using HomeManager.Service.Infrastructure.Controllers;
-using HomeManager.Service.Infrastructure.ViewModels;
-using HomeManager.Web.Common.UIKeys.TestArea;
+using CompositeUI.Customers.Contracts.Commands;
+using CompositeUI.Customers.Web.Models;
+using CompositeUI.Infrastructure;
+using CompositeUI.Service.Infrastructure.Attributes;
+using CompositeUI.Service.Infrastructure.Consts;
+using CompositeUI.Service.Infrastructure.Controllers;
+using CompositeUI.Service.Infrastructure.ViewModels;
+using CompositeUI.Web.Common.UIKeys.TestArea;
 using NServiceBus;
 
-namespace HomeManager.Customers.Web.Areas.TestArea.Controllers
+namespace CompositeUI.Customers.Web.Areas.TestArea.Controllers
 {
-    public class TestController : VMController
+    public class TestController : ServiceController
     {
         private readonly IBus _bus;
         private readonly ImportantClass _importantClass;

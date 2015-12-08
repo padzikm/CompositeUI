@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
-using HomeManager.Service.Infrastructure.ViewModels;
+using CompositeUI.Service.Infrastructure.ViewModels;
 
-namespace HomeManager.Service.Infrastructure.RequestHandlers
+namespace CompositeUI.Service.Infrastructure.RequestHandlers
 {
     public abstract class RequestHandler : IRequestHandler
     {
@@ -15,25 +15,45 @@ namespace HomeManager.Service.Infrastructure.RequestHandlers
 
         public async Task HandleRequest()
         {
-            await GenerateResponse(null);
+            await HandleRequest(Enumerable.Empty<string>(), new Dictionary<string, object>());
+        }
+
+        public async Task HandleRequest(Dictionary<string,object> parameters)
+        {
+            await HandleRequest(Enumerable.Empty<string>(), parameters);
         }
 
         public async Task HandleRequest(IEnumerable<string> uiKeys)
         {
-            var values = new RouteValueDictionary() { { Consts.Consts.UIKeysParamName, uiKeys } };
+            await HandleRequest(uiKeys, new Dictionary<string, object>());
+        }
+
+        public async Task HandleRequest(IEnumerable<string> uiKeys, Dictionary<string, object> parameters)
+        {
+            var values = new RouteValueDictionary(parameters) { { CompositeUI.Service.Infrastructure.Consts.Consts.UIKeysParamName, uiKeys } };
             await GenerateResponse(values);
         }
 
         public async Task<IEnumerable<IViewModel>> GenerateViewModels(IEnumerable<string> uiKeys)
         {
-            var values = new RouteValueDictionary() { { Consts.Consts.UIKeysParamName, uiKeys } };
+            return await GenerateViewModels(uiKeys, new Dictionary<string, object>());
+        }
+
+        public async Task<IEnumerable<IViewModel>> GenerateViewModels(IEnumerable<string> uiKeys, Dictionary<string,object> parameters)
+        {
+            var values = new RouteValueDictionary(parameters) { { CompositeUI.Service.Infrastructure.Consts.Consts.UIKeysParamName, uiKeys } };
             var viewModels = await GenerateResponse(values);
             return viewModels;
         }
 
         public async Task<IEnumerable<IViewModel>> GenerateViewModelsOnInvalidModelState(IEnumerable<string> uiKeys)
         {
-            var values = new RouteValueDictionary() { { Consts.Consts.UIKeysParamName, uiKeys }, { Consts.Consts.InvalidModelStateReplayParamName, Consts.Consts.InvalidModelStateReplayParamValue } };
+            return await GenerateViewModelsOnInvalidModelState(uiKeys, new Dictionary<string, object>());
+        }
+
+        public async Task<IEnumerable<IViewModel>> GenerateViewModelsOnInvalidModelState(IEnumerable<string> uiKeys, Dictionary<string, object> parameters)
+        {
+            var values = new RouteValueDictionary(parameters) { { CompositeUI.Service.Infrastructure.Consts.Consts.UIKeysParamName, uiKeys }, { CompositeUI.Service.Infrastructure.Consts.Consts.InvalidModelStateReplayParamName, CompositeUI.Service.Infrastructure.Consts.Consts.InvalidModelStateReplayParamValue } };
             var viewModels = await GenerateResponse(values);
             return viewModels;
         }
@@ -76,14 +96,14 @@ namespace HomeManager.Service.Infrastructure.RequestHandlers
         {
             // Match the incoming URL against the route table
             RouteData routeData = Routes.GetRouteData(context);
-
+            
             // Do nothing if no route found 
             if (routeData == null)
             {
                 resultKey = null;
                 return null;
             }
-            resultKey = (string)routeData.DataTokens[Consts.Consts.RouteServiceKey];
+            resultKey = (string)routeData.DataTokens[CompositeUI.Service.Infrastructure.Consts.Consts.RouteServiceKey];
 
             if (values != null)
                 foreach (var value in values)

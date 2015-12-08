@@ -1,0 +1,39 @@
+﻿@using CompositeUI.Web.Common.UIKeys
+@model IDictionary<string, CompositeUI.Service.Infrastructure.ViewModels.IViewModel>
+
+<h2>Networking</h2>
+
+<div>
+    <label>Page time: @DateTime.UtcNow.ToLongTimeString()</label>
+</div>
+
+<div id="productsDiv" style="display: inline-block;">
+    @Model[UIKeysPubSubCache.Networking.ProductsDiv].Execute(this, "productsDiv")
+</div>
+
+<div id="ordersDiv" style="display: inline-block;">
+    @Model[UIKeysPubSubCache.Networking.OrdersLabel].Execute(this, "ordersDiv")
+</div>
+
+<script type="text/javascript">
+    var ajaxRequests = [];
+    $(document).ready(function() {
+        $(window).load(function () {
+            var ajaxData = "";
+            for (var i = 0, len = ajaxRequests.length; i < len; ++i) {
+                ajaxData += ajaxRequests[i].queryString;
+                if (i < len - 1)
+                    ajaxData += "&";
+            }
+            $.ajax({
+                method: "GET",
+                url: "@Url.Action("NetworkingData")",
+                data: ajaxData,
+                success: function (data) {
+                    for (var i = 0, len = ajaxRequests.length; i < len; ++i)
+                        ajaxRequests[i].callback(data);
+                }
+            });
+        });
+    });
+</script>

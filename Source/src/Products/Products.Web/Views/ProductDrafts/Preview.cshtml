@@ -1,0 +1,20 @@
+﻿@using CompositeUI.Web.Common.Extensions
+@model CompositeUI.Products.Web.Models.Product
+           
+@Html.Display(p => p.Title)
+@Html.Display(p => p.Author)
+@Html.Display(p => p.Description)
+
+<script type="text/javascript">
+    $(function() {
+        for (var index in formJson) {
+            if (formJson[index].name.lastIndexOf("ProductsService", 0) === 0) {
+                var name = formJson[index].name.substring("ProductsService".length + 1);
+                console.log(name);
+                var place = $("label[for='ProductsService_" + name + "']").parent().next();
+                place.empty();
+                place.append(formJson[index].value);
+            }
+        }
+    });
+</script>

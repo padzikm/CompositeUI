@@ -4,7 +4,7 @@ using System.Web.Routing;
 using System.Web.SessionState;
 using Castle.MicroKernel;
 
-namespace HomeManager.Service.Infrastructure.Controllers
+namespace CompositeUI.Service.Infrastructure.Controllers
 {
     public class WindsorControllerFactory : IControllerFactory
     {

@@ -1,0 +1,46 @@
+﻿@using CompositeUI.Service.Infrastructure.Models
+@using CompositeUI.Web.Common.Extensions
+@using CompositeUI.Web.Common.UIKeys
+@model IDictionary<string, CompositeUI.Service.Infrastructure.ViewModels.ITableViewModel>
+
+@{
+    Layout = null;
+    var productIds = ViewBag.ProductIds as List<ServicePublicData>;
+}
+
+<table id="productsTable">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th></th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach (var productId in productIds)
+        {
+            <tr>
+                <td>@Model[UIKeysProductDrafts.IndexTable.ProductTitleColumn].Execute(this, productId)</td>
+                <td>@Model[UIKeysProductDrafts.IndexTable.ProductAuthorColumn].Execute(this, productId)</td>
+                <td><button data-id="@productId.Id">Edit product</button></td>
+                <td>@Html.ActionPost(Url.Action("Publish", new { id = productId.Id }), "Publish product")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@foreach (var viewModel in Model.Values)
+{
+    @viewModel.Execute(this);
+}
+
+<script type="text/javascript">
+    $(function() {
+        var url = "@Url.Action("Edit")";
+        $("#productsTable button[data-id]").click(function (e) {
+            var id = $(this).data("id");
+            window.location = url + "/" + id;
+        });
+    });
+</script>

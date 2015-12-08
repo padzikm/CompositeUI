@@ -8,9 +8,9 @@ using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.Resolvers.SpecializedResolvers;
 using Castle.Windsor;
 using Castle.Windsor.Installer;
-using HomeManager.Infrastructure;
+using CompositeUI.Infrastructure;
 
-namespace HomeManager.Web.Windsor
+namespace CompositeUI.Web.Windsor
 {
     public class WindsorBootstraper
     {
@@ -19,7 +19,7 @@ namespace HomeManager.Web.Windsor
             var serviceInstallers = GetServiceInstallers(path);
             var installers = new List<IWindsorInstaller>();
             installers.Add(new WindsorInstaller(path));
-            installers.Add(FromAssembly.InDirectory(new AssemblyFilter(path).FilterByName(p => p.Name.StartsWith("HomeManager") && !p.Name.StartsWith("HomeManager.Web"))));
+            installers.Add(FromAssembly.InDirectory(new AssemblyFilter(path).FilterByName(p => p.Name.StartsWith("CompositeUI") && !p.Name.StartsWith("CompositeUI.Web"))));
             installers.AddRange(serviceInstallers);
 
             var container = new WindsorContainer();

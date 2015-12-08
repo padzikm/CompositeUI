@@ -1,4 +1,4 @@
-﻿namespace HomeManager.Infrastructure
+﻿namespace CompositeUI.Infrastructure
 {
     public class ImportantClass
     {

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
-using HomeManager.Service.Infrastructure.Models;
+using CompositeUI.Service.Infrastructure.Models;
 
-namespace HomeManager.Service.Infrastructure.ViewModels
+namespace CompositeUI.Service.Infrastructure.ViewModels
 {
     public class ExceptionViewModel : IViewModel
     {
@@ -11,7 +11,7 @@ namespace HomeManager.Service.Infrastructure.ViewModels
 
         public Dictionary<string, List<ServicePublicData>> ServiceBreadcrumbsRequests { get { throw new InvalidOperationException(); } }
 
-        public Exception Exception { get; private set; }
+        public Exception Exception {get; private set; }
 
         public ExceptionViewModel(Exception exception)
         {
@@ -19,6 +19,11 @@ namespace HomeManager.Service.Infrastructure.ViewModels
         }
 
         public MvcHtmlString Execute(WebViewPage viewPage)
+        {
+            throw new InvalidOperationException();
+        }
+
+        public MvcHtmlString Execute(WebViewPage viewPage, string containerId)
         {
             throw new InvalidOperationException();
         }

@@ -3,10 +3,10 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using Castle.Windsor;
-using HomeManager.Infrastructure;
-using HomeManager.Web.Windsor;
+using CompositeUI.Infrastructure;
+using CompositeUI.Web.Windsor;
 
-namespace HomeManager.Web
+namespace CompositeUI.Web
 {
     public class MvcApplication : HttpApplication
     {

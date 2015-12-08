@@ -1,0 +1,38 @@
+﻿@using CompositeUI.Service.Infrastructure.Consts
+@using CompositeUI.Web.Common.Extensions
+@model IEnumerable<Guid>
+
+@{
+    var name = OrdersConsts.RouteServiceValue;
+    var serializedModel = Model.ToList().Serialize(name);
+}
+
+<div>
+    <label>Render time: @ViewData["time"]</label>
+</div>
+
+<script src="../../@OrdersConsts.ServiceName/Scripts/PubSubCache/networking.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function () {
+        ajaxRequests.push({
+            queryString: "@Html.Raw(serializedModel)",
+            callback: function (json) {
+                var containerId = "@ViewData[Consts.ContainerId]";
+                var obj = {};
+                for (var key in json)
+                    if (json[key].Name === "@OrdersConsts.RouteServiceValue") {
+                        obj = json[key].Object;
+                        break;
+                    }
+                var time = obj.time;
+                var total = obj.total;
+                var label = "<label>Json time: " + time + "</label>";
+                var totalLabel = "<label id='@(OrdersConsts.RouteServiceValue)_total'>Total sum: " + total + "</label>";
+                var html = label + "<br/>" + totalLabel;
+                var containerSelector = "#" + containerId;
+                $(containerSelector).append(html);
+            }
+        });
+    });
+</script>
+

@@ -7,8 +7,8 @@
     <ProjectGuid>{CDC629E6-7934-44E1-B41E-ED24DD8EEBA4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HomeManager.Web.Common</RootNamespace>
-    <AssemblyName>HomeManager.Web.Common</AssemblyName>
+    <RootNamespace>CompositeUI.Web.Common</RootNamespace>
+    <AssemblyName>CompositeUI.Web.Common</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -74,12 +74,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\SelectAttribute.cs" />
     <Compile Include="Extensions\WebExtensions.cs" />
     <Compile Include="Metadata\DataAnnotationsModelMetadataProviderDecorator.cs" />
     <Compile Include="Metadata\EnumDecorator.cs" />
     <Compile Include="Metadata\IDecorateMetadataForProperty.cs" />
     <Compile Include="Metadata\IDecorateMetadataForType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UIKeys\UIKeysProductDrafts.cs" />
+    <Compile Include="UIKeys\UIKeysPubSubCache.cs" />
     <Compile Include="UIKeys\UIKeysTest.cs" />
     <Compile Include="UIKeys\TestArea\UIKeysAreaTest.cs" />
     <Compile Include="Validators\EnumValidator.cs" />

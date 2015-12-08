@@ -1,0 +1,43 @@
+﻿@using CompositeUI.Service.Infrastructure.Consts
+@using CompositeUI.Web.Common.Extensions
+@model IEnumerable<Guid>
+
+@{
+    var serializedModel = Model.Serialize("productIds");
+}
+
+<div>
+    <label>Render time: @ViewData["time"]</label>
+</div>
+
+<script src="../../@ProductsConsts.ServiceName/Scripts/PubSubCache/communicationEvents.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function() {
+        $.ajax({
+            method: "GET",
+            url: "@Url.Action("GetData")",
+            data: "@Html.Raw(serializedModel)",
+            success: function(data) {
+                var containerId = "@ViewData[Consts.ContainerId]";
+                var time = data.time;
+                var products = data.products;
+                var label = "<label>Json time: " + time + "</label>";
+                var listBox = "<select id='productsService_products' multiple='true'>";
+                for (var index in products) {
+                    var product = products[index];
+                    var option = "<option value='" + product.id + "'>" + product.title + "</option>";
+                    listBox += option;
+                }
+                listBox += "</select>";
+                var html = label + "<br/>" + listBox;
+                var containerSelector = "#" + containerId;
+                $(containerSelector).append(html);
+
+                $("#productsService_products").on("change", function () {
+                    var list = $(this).val();
+                    $.pubsub("publish", productsChanged.name, list);
+                });
+            }
+        });
+    });
+</script>

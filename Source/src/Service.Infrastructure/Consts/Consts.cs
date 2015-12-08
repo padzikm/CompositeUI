@@ -1,4 +1,4 @@
-﻿namespace HomeManager.Service.Infrastructure.Consts
+﻿namespace CompositeUI.Service.Infrastructure.Consts
 {
     public class Consts
     {
@@ -9,5 +9,6 @@
         public static readonly string UIKeysParamName = "uiKeys";
         public static readonly string InvalidModelStateReplayParamName = "isModelValid";
         public static readonly bool InvalidModelStateReplayParamValue = false;
+        public static readonly string ContainerId = "containerId";
     }
 }

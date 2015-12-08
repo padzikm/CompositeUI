@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Web.Mvc;
 
-namespace HomeManager.Service.Infrastructure.ViewModels
+namespace CompositeUI.Service.Infrastructure.ViewModels
 {
     public class ViewModelResult : ActionResult
     {
@@ -28,10 +28,10 @@ namespace HomeManager.Service.Infrastructure.ViewModels
             {
                 var cast = viewModel as ViewModel;
                 if (cast != null)
-                    cast.UpdateModel(context);
+                    cast.UpdateViewModel(context);
             }
 
-            var key = context.RouteData.DataTokens.ContainsKey(Consts.Consts.RouteServiceKey) ? (string)context.RouteData.DataTokens[Consts.Consts.RouteServiceKey] : "_mainweb_";
+            var key = (string) context.RouteData.DataTokens[CompositeUI.Service.Infrastructure.Consts.Consts.RouteServiceKey];
             var list = context.HttpContext.Items[key] as List<IViewModel> ?? new List<IViewModel>();
             list.AddRange(ViewModels);
             context.HttpContext.Items[key] = list;

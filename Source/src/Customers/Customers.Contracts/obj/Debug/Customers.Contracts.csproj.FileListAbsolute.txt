@@ -1,7 +1,8 @@
-c:\Projects\CompositeUI\Source\src\Customers\Customers.Contracts\bin\Debug\HomeManager.Customers.Contracts.dll
-c:\Projects\CompositeUI\Source\src\Customers\Customers.Contracts\bin\Debug\HomeManager.Customers.Contracts.pdb
+c:\Projects\CompositeUI\Source\src\Customers\Customers.Contracts\bin\Debug\CompositeUI.Customers.Contracts.dll
+c:\Projects\CompositeUI\Source\src\Customers\Customers.Contracts\bin\Debug\CompositeUI.Customers.Contracts.pdb
 c:\Projects\CompositeUI\Source\src\Customers\Customers.Contracts\bin\Debug\NServiceBus.Core.dll
 c:\Projects\CompositeUI\Source\src\Customers\Customers.Contracts\bin\Debug\NServiceBus.Core.pdb
 c:\Projects\CompositeUI\Source\src\Customers\Customers.Contracts\bin\Debug\NServiceBus.Core.xml
-c:\Projects\CompositeUI\Source\src\Customers\Customers.Contracts\obj\Debug\HomeManager.Customers.Contracts.dll
-c:\Projects\CompositeUI\Source\src\Customers\Customers.Contracts\obj\Debug\HomeManager.Customers.Contracts.pdb
+c:\Projects\CompositeUI\Source\src\Customers\Customers.Contracts\obj\Debug\CompositeUI.Customers.Contracts.dll
+c:\Projects\CompositeUI\Source\src\Customers\Customers.Contracts\obj\Debug\CompositeUI.Customers.Contracts.pdb
+c:\Projects\CompositeUI\Source\src\Customers\Customers.Contracts\obj\Debug\Customers.Contracts.csprojResolveAssemblyReference.cache

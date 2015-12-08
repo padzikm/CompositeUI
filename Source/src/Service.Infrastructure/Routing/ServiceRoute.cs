@@ -2,7 +2,7 @@
 using System.Web;
 using System.Web.Routing;
 
-namespace HomeManager.Service.Infrastructure.Routing
+namespace CompositeUI.Service.Infrastructure.Routing
 {
     public class ServiceRoute : Route
     {
@@ -24,7 +24,7 @@ namespace HomeManager.Service.Infrastructure.Routing
 
         public override RouteData GetRouteData(HttpContextBase httpContext)
         {
-            if (!DataTokens.ContainsKey(Consts.Consts.RouteServiceKey))
+            if (!DataTokens.ContainsKey(CompositeUI.Service.Infrastructure.Consts.Consts.RouteServiceKey))
                 throw new InvalidOperationException("DataTokens must contain RouteServiceKey in service routing");
 
             return base.GetRouteData(httpContext);
@@ -32,17 +32,17 @@ namespace HomeManager.Service.Infrastructure.Routing
 
         public override VirtualPathData GetVirtualPath(RequestContext requestContext, RouteValueDictionary values)
         {
-            if (!DataTokens.ContainsKey(Consts.Consts.RouteServiceKey))
+            if (!DataTokens.ContainsKey(CompositeUI.Service.Infrastructure.Consts.Consts.RouteServiceKey))
                 throw new InvalidOperationException("DataTokens must contain RouteServiceKey in service routing");
-            if (!values.ContainsKey(Consts.Consts.RouteServiceKey) && !requestContext.RouteData.DataTokens.ContainsKey(Consts.Consts.RouteServiceKey))
+            if (!values.ContainsKey(CompositeUI.Service.Infrastructure.Consts.Consts.RouteServiceKey) && !requestContext.RouteData.DataTokens.ContainsKey(CompositeUI.Service.Infrastructure.Consts.Consts.RouteServiceKey))
                 return null;
-            if (values.ContainsKey(Consts.Consts.RouteExternalService))
+            if (values.ContainsKey(CompositeUI.Service.Infrastructure.Consts.Consts.RouteExternalService))
                 return null;
-            if (DataTokens[Consts.Consts.RouteServiceKey] != values[Consts.Consts.RouteServiceKey] && DataTokens[Consts.Consts.RouteServiceKey] != requestContext.RouteData.DataTokens[Consts.Consts.RouteServiceKey])
+            if (DataTokens[CompositeUI.Service.Infrastructure.Consts.Consts.RouteServiceKey] != values[CompositeUI.Service.Infrastructure.Consts.Consts.RouteServiceKey] && DataTokens[CompositeUI.Service.Infrastructure.Consts.Consts.RouteServiceKey] != requestContext.RouteData.DataTokens[CompositeUI.Service.Infrastructure.Consts.Consts.RouteServiceKey])
                 return null;
 
             var tmpValues = new RouteValueDictionary(values);
-            tmpValues.Remove(Consts.Consts.RouteServiceKey);
+            tmpValues.Remove(CompositeUI.Service.Infrastructure.Consts.Consts.RouteServiceKey);
 
             return base.GetVirtualPath(requestContext, tmpValues);
         }

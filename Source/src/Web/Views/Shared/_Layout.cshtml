@@ -8,11 +8,32 @@
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/validation")
+    <script src="~/Scripts/jquery.pubsub.js"></script>
+    <style>
+        table {
+            margin: 0 auto;
+            
+        }
+
+            table th {
+                font-weight: bold;
+                border-bottom: 1px solid #ddd;
+                text-align: center;
+                padding: 15px;
+            }
+
+            table td {
+                border-bottom: 1px solid #ddd;
+                text-align: center;
+                padding: 15px;
+            }
+    </style>
 </head>
 <body>
     <div style="text-align: center">
         @RenderBody()
     </div>
-@RenderSection("scripts", required: false)
+    @RenderSection("scripts", required: false)
 </body>
 </html>

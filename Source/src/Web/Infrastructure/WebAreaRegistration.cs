@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using System.Web.Routing;
-using HomeManager.Infrastructure;
+using CompositeUI.Infrastructure;
 
-namespace HomeManager.Web.Infrastructure
+namespace CompositeUI.Web.Infrastructure
 {
     public abstract class WebAreaRegistration : AreaRegistration
     {
@@ -52,7 +52,7 @@ namespace HomeManager.Web.Infrastructure
                 throw new ArgumentNullException("url");
             var route = new WebRoute(url, (IRouteHandler)new MvcRouteHandler())
             {
-                Defaults = CreateRouteValueDictionary(defaults),//outeCollectionExtensions.CreateRouteValueDictionaryUncached(defaults),
+                Defaults = CreateRouteValueDictionary(defaults),//RouteCollectionExtensions.CreateRouteValueDictionaryUncached(defaults),
                 Constraints = CreateRouteValueDictionary(constraints),//RouteCollectionExtensions.CreateRouteValueDictionaryUncached(constraints),
                 DataTokens = new RouteValueDictionary()
             };

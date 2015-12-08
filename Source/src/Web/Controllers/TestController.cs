@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using HomeManager.Service.Infrastructure.Controllers;
-using HomeManager.Service.Infrastructure.RequestHandlers;
-using HomeManager.Web.Common.UIKeys;
+using CompositeUI.Service.Infrastructure.Controllers;
+using CompositeUI.Service.Infrastructure.RequestHandlers;
+using CompositeUI.Web.Common.UIKeys;
 
-namespace HomeManager.Web.Controllers
+namespace CompositeUI.Web.Controllers
 {
-    public class TestController : VController
+    public class TestController : WebController
     {
         public TestController(IEnumerable<IRequestHandler> requestHandlers) : base(requestHandlers)
         {

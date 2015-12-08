@@ -1,4 +1,4 @@
-﻿namespace HomeManager.Web.Common.UIKeys
+﻿namespace CompositeUI.Web.Common.UIKeys
 {
     public static class UIKeysTest
     {

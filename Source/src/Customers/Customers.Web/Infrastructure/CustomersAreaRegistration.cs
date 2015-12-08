@@ -1,8 +1,8 @@
 ﻿using System.Web.Mvc;
-using HomeManager.Service.Infrastructure.Consts;
-using HomeManager.Service.Infrastructure.Routing;
+using CompositeUI.Service.Infrastructure.Consts;
+using CompositeUI.Service.Infrastructure.Routing;
 
-namespace HomeManager.Customers.Web.Infrastructure
+namespace CompositeUI.Customers.Web.Infrastructure
 {
     public class CustomersAreaRegistration : ServiceAreaRegistration
     {
@@ -23,7 +23,7 @@ namespace HomeManager.Customers.Web.Infrastructure
                 CustomersConsts.ServiceName + "_service",
                 CustomersConsts.ServiceName + "/{controller}/{action}/{id}",
                 new { action = "Index", id = UrlParameter.Optional},
-                new[] { "HomeManager.Customers.Web.Controllers" }
+                new[] { "CompositeUI.Customers.Web.Controllers" }
                 );
         }
     }

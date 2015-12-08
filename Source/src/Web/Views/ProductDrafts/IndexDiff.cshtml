@@ -1,0 +1,59 @@
+﻿@using CompositeUI.Service.Infrastructure.ViewModels
+@using CompositeUI.Web.Common.UIKeys
+@model IDictionary<string, IViewModel>
+
+<h2>Products table json</h2>
+
+<div id="table"></div>
+<br/>
+<div>@Html.ActionLink("New product", "Add")</div>
+
+@foreach (var viewModel in Model.Values.OfType<ITableViewModel>())
+{
+    @viewModel.Execute(this);
+}
+
+<script type="text/javascript">
+    $(function () {
+        $.ajax({
+            method: "GET",
+            url: "@Url.Action("GetTableData", new { key = Model[UIKeysProductDrafts.IndexDiff.ProductTableOrder].Id})",
+            success: productTableFunc,
+            error: function () {
+                $.ajax({
+                    method: "GET",
+                    url: "@Url.Action("GetTableData", new { key = Model[UIKeysProductDrafts.IndexDiff.ProductTableOrder].Id })",
+                    data: "@Html.Raw(ViewData[Model[UIKeysProductDrafts.IndexDiff.ProductTableOrder].Id])",
+                    success: productTableFunc
+                });
+            }
+        });
+    });
+
+    var productTableFunc = function(data) {
+        console.log(data);
+        var productTableOrder = @Html.Raw(ViewData[Model[UIKeysProductDrafts.IndexDiff.ProductTableOrder].Id + "json"]);
+        var editUrl = "@Url.Action("Edit")";
+        var publishUrl = "@Url.Action("Publish")";
+        var table = "<table id='productsTable'><thead><tr><th>Title</th><th>Author</th><th></th><th></th></tr></thead><tbody>";
+        for (var i = 0, len = productTableOrder.length; i < len; ++i) {
+            var obj = productTableOrder[i];
+            var id = obj.Id;
+            var row = "<tr>";
+            row += "<td>" + @(UIKeysProductDrafts.IndexDiff.ProductTitleColumn)(id, data) + "</td>";
+            row += "<td>" + @(UIKeysProductDrafts.IndexDiff.ProductAuthorColumn)(id, data) + "</td>";
+            row += "<td><button data-id='" + id + "'>Edit product</button></td>";
+            row += "<td><form method='POST' action='" + publishUrl + "/" + id + "'><button>Publish product</button></form></td>";
+            row += "</tr>";
+            table += row;
+        }
+        table += "</tbody></table>";
+        $("#table").append(table);
+
+        $("#productsTable button[data-id]").on("click", function (e) {
+            var id = $(this).data("id");
+            window.location = editUrl + "/" + id;
+        });
+    };
+
+</script>

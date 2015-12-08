@@ -1,10 +1,10 @@
-﻿@using HomeManager.Service.Infrastructure.Consts
-@using HomeManager.Web.Common.Extensions
+﻿@using CompositeUI.Service.Infrastructure.Consts
+@using CompositeUI.Web.Common.Extensions
 @model object
 
 @{
     Html.ViewDataContainer.ViewData.TemplateInfo.RemoveFromVisited(ViewData);
-    if (ViewContext.RequestContext.RouteData.DataTokens.ContainsKey(Consts.RouteServiceKey) && !ViewData.ContainsKey("_includePrefix"))
+    if (ViewContext.RequestContext.RouteData.DataTokens.ContainsKey(Consts.RouteServiceKey) && !ViewData.ContainsKey("_excludePrefix"))
     {
         ViewData.TemplateInfo.HtmlFieldPrefix = ViewContext.RequestContext.RouteData.DataTokens[Consts.RouteServiceKey] + "." + ViewData.TemplateInfo.HtmlFieldPrefix;
     }

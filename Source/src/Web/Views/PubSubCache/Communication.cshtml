@@ -1,0 +1,12 @@
+﻿@using CompositeUI.Web.Common.UIKeys
+@model IDictionary<string, CompositeUI.Service.Infrastructure.ViewModels.IViewModel>
+
+<h2>Communication</h2>
+
+<div id="productsDiv" style="display: inline-block;">
+    @Model[UIKeysPubSubCache.Communication.ProductsDiv].Execute(this, "productsDiv")
+</div>
+
+<div id="ordersDiv" style="display: inline-block;">
+    @Model[UIKeysPubSubCache.Communication.OrdersLabel].Execute(this, "ordersDiv")
+</div>

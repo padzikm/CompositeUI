@@ -1,6 +1,6 @@
 ﻿using System.Web.Optimization;
 
-namespace HomeManager.Web
+namespace CompositeUI.Web
 {
     public class BundleConfig
     {
@@ -9,7 +9,9 @@ namespace HomeManager.Web
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js",
-                        "~/Scripts/jquery.unobtrusive-ajax.js",
+                        "~/Scripts/jquery.unobtrusive-ajax.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/validation").Include(
                         "~/Scripts/jquery.validate.js",
                         "~/Scripts/jquery.validate.unobtrusive.js"));
 

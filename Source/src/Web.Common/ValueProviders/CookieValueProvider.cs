@@ -3,7 +3,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace HomeManager.Web.Common.ValueProviders
+namespace CompositeUI.Web.Common.ValueProviders
 {
     public class CookieValueProvider : IValueProvider
     {

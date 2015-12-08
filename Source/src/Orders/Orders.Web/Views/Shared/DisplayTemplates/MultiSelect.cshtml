@@ -1,10 +1,10 @@
-﻿@model System.Collections.IEnumerable
+﻿@model IDictionary<string,string>
 
 <ul>
     @foreach (var item in Model)
     {
         <li>
-            @Html.DisplayFor(p => item)
+            @Html.DisplayFor(p => item.Value)
         </li>
     }
 </ul>

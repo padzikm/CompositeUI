@@ -1,6 +1,6 @@
-﻿using HomeManager.Service.Infrastructure.Consts;
+﻿using CompositeUI.Service.Infrastructure.Consts;
 
-namespace HomeManager.Service.Infrastructure.ViewEngines
+namespace CompositeUI.Service.Infrastructure.ViewEngines
 {
     public class CustomersViewEngine : ViewEngine
     {

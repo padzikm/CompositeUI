@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
-using HomeManager.Service.Infrastructure.ViewModels;
+using CompositeUI.Service.Infrastructure.ViewModels;
 
-namespace HomeManager.Service.Infrastructure.Filters
+namespace CompositeUI.Service.Infrastructure.Filters
 {
     public class ServiceExceptionFilter : FilterAttribute, IExceptionFilter
     {

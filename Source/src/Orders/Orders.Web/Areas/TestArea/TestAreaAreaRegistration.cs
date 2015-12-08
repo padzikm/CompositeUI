@@ -1,8 +1,8 @@
 ﻿using System.Web.Mvc;
-using HomeManager.Service.Infrastructure.Consts;
-using HomeManager.Service.Infrastructure.Routing;
+using CompositeUI.Service.Infrastructure.Consts;
+using CompositeUI.Service.Infrastructure.Routing;
 
-namespace HomeManager.Orders.Web.Areas.TestArea
+namespace CompositeUI.Orders.Web.Areas.TestArea
 {
     public class TestAreaAreaRegistration : ServiceAreaRegistration 
     {

@@ -1,4 +1,4 @@
-﻿namespace HomeManager.Customers.Web.Infrastructure
+﻿namespace CompositeUI.Customers.Web.Infrastructure
 {
     public class Consts
     {

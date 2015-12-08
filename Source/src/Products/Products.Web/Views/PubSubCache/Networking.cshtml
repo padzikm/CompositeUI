@@ -1,0 +1,48 @@
+﻿@using CompositeUI.Service.Infrastructure.Consts
+@using CompositeUI.Web.Common.Extensions
+@model IEnumerable<Guid>
+
+@{
+    var name = ProductsConsts.RouteServiceValue;
+    var serializedModel = Model.ToList().Serialize(name);
+}
+
+<div>
+    <label>Render time: @ViewData["time"]</label>
+</div>
+
+<script src="../../@ProductsConsts.ServiceName/Scripts/PubSubCache/networkingEvents.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function() {
+        ajaxRequests.push({
+            queryString: "@Html.Raw(serializedModel)",
+            callback: function(json) {
+                var containerId = "@ViewData[Consts.ContainerId]";
+                var obj = {};
+                for (var key in json)
+                    if (json[key].Name === "@ProductsConsts.RouteServiceValue") {
+                        obj = json[key].Object;
+                        break;
+                    }
+                var time = obj.time;
+                var products = obj.products;
+                var label = "<label>Json time: " + time + "</label>";
+                var listBox = "<select id='productsService_products' multiple='true'>";
+                for (var index in products) {
+                    var product = products[index];
+                    var option = "<option value='" + product.id + "'>" + product.title + "</option>";
+                    listBox += option;
+                }
+                listBox += "</select>";
+                var html = label + "<br/>" + listBox;
+                var containerSelector = "#" + containerId;
+                $(containerSelector).append(html);
+
+                $("#productsService_products").on("change", function () {
+                    var list = $(this).val();
+                    $.pubsub("publish", productsChanged.name, list);
+                });
+            }
+        });
+    });
+</script>

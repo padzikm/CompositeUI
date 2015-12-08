@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HomeManager.Products.Web</RootNamespace>
-    <AssemblyName>HomeManager.Products.Web</AssemblyName>
+    <RootNamespace>CompositeUI.Products.Web</RootNamespace>
+    <AssemblyName>CompositeUI.Products.Web</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -98,14 +98,22 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <None Include="Scripts\_references.js" />
+    <Content Include="Scripts\PubSubCache\communicationEvents.js" />
+    <Content Include="Scripts\PubSubCache\networkingEvents.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Areas\TestArea\Controllers\TestController.cs" />
     <Compile Include="Areas\TestArea\TestAreaAreaRegistration.cs" />
+    <Compile Include="Controllers\ProductDraftsController.cs" />
+    <Compile Include="Controllers\PubSubCacheController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\ProductsAreaRegistration.cs" />
+    <Compile Include="Infrastructure\ProductsAppConfiguration.cs" />
+    <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Windsor\ExternalWindsorInstaller.cs" />
     <Compile Include="Windsor\InternalWindsorInstaller.cs" />
@@ -116,6 +124,12 @@
     <Content Include="packages.config" />
     <Content Include="Areas\TestArea\Views\web.config" />
     <Content Include="Areas\TestArea\Views\Test\AddCustomer.cshtml" />
+    <Content Include="Views\ProductDrafts\Add.cshtml" />
+    <Content Include="Views\ProductDrafts\Edit.cshtml" />
+    <Content Include="Views\ProductDrafts\IndexDiff.cshtml" />
+    <Content Include="Views\ProductDrafts\Preview.cshtml" />
+    <Content Include="Views\PubSubCache\Communication.cshtml" />
+    <Content Include="Views\PubSubCache\Networking.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -128,8 +142,6 @@
     <Folder Include="App_Start\" />
     <Folder Include="Areas\TestArea\Models\" />
     <Folder Include="Areas\TestArea\Views\Shared\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Infrastructure\Infrastructure.csproj">
@@ -173,7 +185,8 @@
   <PropertyGroup>
     <PostBuildEvent>xcopy "$(TargetDir)*" “$(SolutionDir)src\Web\bin\ProductsService\” /s /i /y
 xcopy “$(ProjectDir)Views” “$(SolutionDir)src\Web\ProductsService\Views\” /s /i /y
-xcopy “$(ProjectDir)Areas” “$(SolutionDir)src\Web\ProductsService\Areas\” /s /i /y</PostBuildEvent>
+xcopy “$(ProjectDir)Areas” “$(SolutionDir)src\Web\ProductsService\Areas\” /s /i /y
+xcopy “$(ProjectDir)Scripts” “$(SolutionDir)src\Web\ProductsService\Scripts\” /s /i /y</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

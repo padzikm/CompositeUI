@@ -1,0 +1,35 @@
+﻿@using CompositeUI.Web.Common.Extensions
+@model CompositeUI.Orders.Web.Models.ProductModel
+           
+@Html.Display(p => p.ProductCategories)
+
+<script type="text/javascript">
+    $(function() {
+        var ids = [];
+        for (var index in formJson) {
+            if (formJson[index].name === "ProductCategories") {
+                ids.push(formJson[index].value);
+            }
+        }
+        if (ids.length === 0)
+            return;
+        var queryString = "";
+        for (var i in ids)
+            queryString += "categoryIds=" + ids[i] + "&";
+        $.ajax({
+            method: "GET",
+            url: "@Url.Action("GetCategories")",
+            data: queryString,
+            success: function(data) {
+                console.log(data);
+                var list = "<ul>";
+                for (var i in data)
+                    list += "<li>" + data[i] + "</li>";
+                list += "</ul>";
+                var place = $("label[for='OrdersService_ProductCategories']").parent().next();
+                place.empty();
+                place.append(list);
+            }
+        });
+    });
+</script>
