@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.Web.Mvc;
 using System.Web.Routing;
-using CompositeUI.Infrastructure;
 
-namespace CompositeUI.Web.Infrastructure
+namespace CompositeUI.Service.Infrastructure
 {
     public static class WebRouteRegistration
     {

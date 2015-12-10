@@ -99,6 +99,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ServiceInternalRouteConfig.tt</DependentUpon>
     </Compile>
+    <Compile Include="Routing\WebAreaRegistration.cs" />
+    <Compile Include="Routing\WebRoute.cs" />
+    <Compile Include="Routing\WebRouteRegistration.cs" />
+    <Compile Include="Utils\PropertyHelper.cs" />
+    <Compile Include="Utils\TypeHelper.cs" />
     <Compile Include="ViewEngines\ServiceViewEngine.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -147,12 +152,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
-      <Project>{F3494BE0-6F1D-4375-84F3-87AFC4B70607}</Project>
-      <Name>Infrastructure</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

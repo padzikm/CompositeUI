@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Web.Mvc;
-using CompositeUI.Service.Infrastructure.ViewModels;
 
-namespace CompositeUI.Service.Infrastructure.Controllers
+namespace CompositeUI.Service.Infrastructure
 {
     public class ServiceController : Controller
     {
@@ -18,7 +17,7 @@ namespace CompositeUI.Service.Infrastructure.Controllers
                 foreach (var pair in viewDataCasted)
                     ViewData.Add(pair.Key, pair.Value);
             }
-            ViewData.Add(Consts.Consts.ContainerId, containerId);
+            ViewData.Add(Consts.ContainerId, containerId);
             return View(viewName, model);
         }
 
@@ -44,7 +43,7 @@ namespace CompositeUI.Service.Infrastructure.Controllers
 
         protected ViewModelResult JsonViewModel(object obj)
         {
-            var serviceValue = (string)RouteData.DataTokens[Consts.Consts.RouteServiceKey];
+            var serviceValue = (string)RouteData.DataTokens[Consts.RouteServiceKey];
             return JsonViewModel(serviceValue, obj);
         }
 
@@ -52,6 +51,15 @@ namespace CompositeUI.Service.Infrastructure.Controllers
         {
             var jsonvm = new JsonViewModel(name, obj);
             return new ViewModelResult(jsonvm);
+        }
+
+        protected override void OnException(ExceptionContext filterContext)
+        {
+            if (filterContext.RouteData.DataTokens.ContainsKey(Consts.RouteInternalServiceKey) && (string)filterContext.RouteData.DataTokens[Consts.RouteInternalServiceKey] == Consts.RouteInternalServiceValue)
+            {
+                filterContext.Result = new ViewModelResult(new ExceptionViewModel(filterContext.Exception));
+                filterContext.ExceptionHandled = true;
+            }
         }
     }
 }

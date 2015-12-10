@@ -4,6 +4,6 @@ c:\Projects\CompositeUI\Source\src\Infrastructure\bin\Debug\Castle.Core.dll
 c:\Projects\CompositeUI\Source\src\Infrastructure\bin\Debug\Castle.Windsor.dll
 c:\Projects\CompositeUI\Source\src\Infrastructure\bin\Debug\Castle.Core.xml
 c:\Projects\CompositeUI\Source\src\Infrastructure\bin\Debug\Castle.Windsor.xml
+c:\Projects\CompositeUI\Source\src\Infrastructure\obj\Debug\Infrastructure.csprojResolveAssemblyReference.cache
 c:\Projects\CompositeUI\Source\src\Infrastructure\obj\Debug\CompositeUI.Infrastructure.dll
 c:\Projects\CompositeUI\Source\src\Infrastructure\obj\Debug\CompositeUI.Infrastructure.pdb
-c:\Projects\CompositeUI\Source\src\Infrastructure\obj\Debug\Infrastructure.csprojResolveAssemblyReference.cache

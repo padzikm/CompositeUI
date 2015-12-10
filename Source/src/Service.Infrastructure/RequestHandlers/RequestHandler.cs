@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.ExceptionServices;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
-using CompositeUI.Service.Infrastructure.ViewModels;
 
-namespace CompositeUI.Service.Infrastructure.RequestHandlers
+namespace CompositeUI.Service.Infrastructure
 {
     public abstract class RequestHandler : IRequestHandler
     {
@@ -30,7 +30,7 @@ namespace CompositeUI.Service.Infrastructure.RequestHandlers
 
         public async Task HandleRequest(IEnumerable<string> uiKeys, Dictionary<string, object> parameters)
         {
-            var values = new RouteValueDictionary(parameters) { { CompositeUI.Service.Infrastructure.Consts.Consts.UIKeysParamName, uiKeys } };
+            var values = new RouteValueDictionary(parameters) { { Consts.UIKeysParamName, uiKeys } };
             await GenerateResponse(values);
         }
 
@@ -41,7 +41,7 @@ namespace CompositeUI.Service.Infrastructure.RequestHandlers
 
         public async Task<IEnumerable<IViewModel>> GenerateViewModels(IEnumerable<string> uiKeys, Dictionary<string,object> parameters)
         {
-            var values = new RouteValueDictionary(parameters) { { CompositeUI.Service.Infrastructure.Consts.Consts.UIKeysParamName, uiKeys } };
+            var values = new RouteValueDictionary(parameters) { { Consts.UIKeysParamName, uiKeys } };
             var viewModels = await GenerateResponse(values);
             return viewModels;
         }
@@ -53,7 +53,7 @@ namespace CompositeUI.Service.Infrastructure.RequestHandlers
 
         public async Task<IEnumerable<IViewModel>> GenerateViewModelsOnInvalidModelState(IEnumerable<string> uiKeys, Dictionary<string, object> parameters)
         {
-            var values = new RouteValueDictionary(parameters) { { CompositeUI.Service.Infrastructure.Consts.Consts.UIKeysParamName, uiKeys }, { CompositeUI.Service.Infrastructure.Consts.Consts.InvalidModelStateReplayParamName, CompositeUI.Service.Infrastructure.Consts.Consts.InvalidModelStateReplayParamValue } };
+            var values = new RouteValueDictionary(parameters) { { Consts.UIKeysParamName, uiKeys }, { Consts.InvalidModelStateReplayParamName, Consts.InvalidModelStateReplayParamValue } };
             var viewModels = await GenerateResponse(values);
             return viewModels;
         }
@@ -86,7 +86,7 @@ namespace CompositeUI.Service.Infrastructure.RequestHandlers
                 if (ex != null)
                 {
                     var cast = ex as ExceptionViewModel;
-                    throw cast.Exception;
+                    ExceptionDispatchInfo.Capture(cast.Exception).Throw();
                 }
             }
             return list;
@@ -103,7 +103,7 @@ namespace CompositeUI.Service.Infrastructure.RequestHandlers
                 resultKey = null;
                 return null;
             }
-            resultKey = (string)routeData.DataTokens[CompositeUI.Service.Infrastructure.Consts.Consts.RouteServiceKey];
+            resultKey = (string)routeData.DataTokens[Consts.RouteServiceKey];
 
             if (values != null)
                 foreach (var value in values)

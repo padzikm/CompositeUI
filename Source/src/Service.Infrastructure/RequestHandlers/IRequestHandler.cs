@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using CompositeUI.Service.Infrastructure.ViewModels;
 
-namespace CompositeUI.Service.Infrastructure.RequestHandlers
+namespace CompositeUI.Service.Infrastructure
 {
     public interface IRequestHandler
     {

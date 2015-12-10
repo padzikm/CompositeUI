@@ -4,10 +4,7 @@ using System.Web.Mvc.Html;
 using CompositeUI.Customers.Contracts.Commands;
 using CompositeUI.Customers.Web.Models;
 using CompositeUI.Infrastructure;
-using CompositeUI.Service.Infrastructure.Attributes;
-using CompositeUI.Service.Infrastructure.Consts;
-using CompositeUI.Service.Infrastructure.Controllers;
-using CompositeUI.Service.Infrastructure.ViewModels;
+using CompositeUI.Service.Infrastructure;
 using CompositeUI.Web.Common.UIKeys;
 using NServiceBus;
 

@@ -1,4 +1,4 @@
-﻿namespace CompositeUI.Service.Infrastructure.Models
+﻿namespace CompositeUI.Service.Infrastructure
 {
     internal class JsonData
     {

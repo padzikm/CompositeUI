@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CompositeUI.Service.Infrastructure.Exceptions
+namespace CompositeUI.Service.Infrastructure
 {
     public class InvalidModelException : Exception
     {

@@ -1,5 +1,5 @@
 ﻿using System.Web.Mvc;
-using CompositeUI.Service.Infrastructure.Filters;
+using CompositeUI.Service.Infrastructure;
 
 namespace CompositeUI.Web
 {

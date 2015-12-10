@@ -1,6 +1,5 @@
-﻿using CompositeUI.Service.Infrastructure.Consts;
-
-namespace CompositeUI.Service.Infrastructure.ViewEngines
+﻿
+namespace CompositeUI.Service.Infrastructure
 {
     public class CustomersViewEngine : ViewEngine
     {

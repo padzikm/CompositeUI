@@ -1,7 +1,6 @@
 ﻿using System.Web.Routing;
-using CompositeUI.Service.Infrastructure.Routing;
 
-namespace CompositeUI.Service.Infrastructure.RequestHandlers
+namespace CompositeUI.Service.Infrastructure
 {
 	public class CustomersRequestHandler : RequestHandler
     {

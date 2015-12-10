@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Web.Mvc;
-using CompositeUI.Service.Infrastructure.Models;
 
-namespace CompositeUI.Service.Infrastructure.ViewModels
+namespace CompositeUI.Service.Infrastructure
 {
     public class TableViewModel : ViewModel, ITableViewModel
     {

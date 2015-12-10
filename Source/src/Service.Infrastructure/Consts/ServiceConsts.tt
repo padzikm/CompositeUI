@@ -11,7 +11,7 @@
 	"Products",
 	};
 #>
-namespace CompositeUI.Service.Infrastructure.Consts
+namespace CompositeUI.Service.Infrastructure
 {
 <#
 	var first = true;

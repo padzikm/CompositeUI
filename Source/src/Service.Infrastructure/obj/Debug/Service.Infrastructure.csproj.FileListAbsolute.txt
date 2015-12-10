@@ -2,7 +2,6 @@ c:\Projects\CompositeUI\Source\src\Service.Infrastructure\bin\Debug\CompositeUI.
 c:\Projects\CompositeUI\Source\src\Service.Infrastructure\bin\Debug\CompositeUI.Service.Infrastructure.pdb
 c:\Projects\CompositeUI\Source\src\Service.Infrastructure\bin\Debug\Castle.Core.dll
 c:\Projects\CompositeUI\Source\src\Service.Infrastructure\bin\Debug\Castle.Windsor.dll
-c:\Projects\CompositeUI\Source\src\Service.Infrastructure\bin\Debug\CompositeUI.Infrastructure.dll
 c:\Projects\CompositeUI\Source\src\Service.Infrastructure\bin\Debug\Microsoft.Web.Infrastructure.dll
 c:\Projects\CompositeUI\Source\src\Service.Infrastructure\bin\Debug\System.Web.Helpers.dll
 c:\Projects\CompositeUI\Source\src\Service.Infrastructure\bin\Debug\System.Web.Mvc.dll
@@ -10,7 +9,6 @@ c:\Projects\CompositeUI\Source\src\Service.Infrastructure\bin\Debug\System.Web.R
 c:\Projects\CompositeUI\Source\src\Service.Infrastructure\bin\Debug\System.Web.WebPages.Deployment.dll
 c:\Projects\CompositeUI\Source\src\Service.Infrastructure\bin\Debug\System.Web.WebPages.dll
 c:\Projects\CompositeUI\Source\src\Service.Infrastructure\bin\Debug\System.Web.WebPages.Razor.dll
-c:\Projects\CompositeUI\Source\src\Service.Infrastructure\bin\Debug\CompositeUI.Infrastructure.pdb
 c:\Projects\CompositeUI\Source\src\Service.Infrastructure\bin\Debug\Castle.Core.xml
 c:\Projects\CompositeUI\Source\src\Service.Infrastructure\bin\Debug\Castle.Windsor.xml
 c:\Projects\CompositeUI\Source\src\Service.Infrastructure\bin\Debug\System.Web.Helpers.xml

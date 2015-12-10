@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Web.Mvc;
 
-namespace CompositeUI.Service.Infrastructure.ViewModels
+namespace CompositeUI.Service.Infrastructure
 {
     public class ViewModelResult : ActionResult
     {
@@ -31,7 +31,7 @@ namespace CompositeUI.Service.Infrastructure.ViewModels
                     cast.UpdateViewModel(context);
             }
 
-            var key = (string) context.RouteData.DataTokens[CompositeUI.Service.Infrastructure.Consts.Consts.RouteServiceKey];
+            var key = (string) context.RouteData.DataTokens[Consts.RouteServiceKey];
             var list = context.HttpContext.Items[key] as List<IViewModel> ?? new List<IViewModel>();
             list.AddRange(ViewModels);
             context.HttpContext.Items[key] = list;

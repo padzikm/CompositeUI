@@ -17,6 +17,6 @@ c:\Projects\CompositeUI\Source\src\Web.Common\bin\Debug\System.Web.Razor.xml
 c:\Projects\CompositeUI\Source\src\Web.Common\bin\Debug\System.Web.WebPages.xml
 c:\Projects\CompositeUI\Source\src\Web.Common\bin\Debug\System.Web.WebPages.Deployment.xml
 c:\Projects\CompositeUI\Source\src\Web.Common\bin\Debug\System.Web.WebPages.Razor.xml
+c:\Projects\CompositeUI\Source\src\Web.Common\obj\Debug\Web.Common.csprojResolveAssemblyReference.cache
 c:\Projects\CompositeUI\Source\src\Web.Common\obj\Debug\CompositeUI.Web.Common.dll
 c:\Projects\CompositeUI\Source\src\Web.Common\obj\Debug\CompositeUI.Web.Common.pdb
-c:\Projects\CompositeUI\Source\src\Web.Common\obj\Debug\Web.Common.csprojResolveAssemblyReference.cache

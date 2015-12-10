@@ -11,9 +11,8 @@
 	"Products",
 	};
 #>
-using CompositeUI.Service.Infrastructure.Consts;
 
-namespace CompositeUI.Service.Infrastructure.ViewEngines
+namespace CompositeUI.Service.Infrastructure
 {
 <#
 	var first = true;

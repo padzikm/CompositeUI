@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
-using CompositeUI.Service.Infrastructure.Models;
 
-namespace CompositeUI.Service.Infrastructure.ViewModels
+namespace CompositeUI.Service.Infrastructure
 {
     public class TableOrderViewModel : ITableOrderViewModel
     {

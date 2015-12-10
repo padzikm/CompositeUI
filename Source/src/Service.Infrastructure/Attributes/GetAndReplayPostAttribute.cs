@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using System.Web.Mvc;
 
-namespace CompositeUI.Service.Infrastructure.Attributes
+namespace CompositeUI.Service.Infrastructure
 {
     public class GetAndReplayPostAttribute : ActionMethodSelectorAttribute
     {
@@ -9,7 +9,7 @@ namespace CompositeUI.Service.Infrastructure.Attributes
         {
             var isGetRequest = controllerContext.HttpContext.Request.HttpMethod.ToUpper() == "GET";
             var isPostRequest = controllerContext.HttpContext.Request.HttpMethod.ToUpper() == "POST";
-            var isReplayRequest = controllerContext.RouteData.Values.ContainsKey(Consts.Consts.InvalidModelStateReplayParamName);
+            var isReplayRequest = controllerContext.RouteData.Values.ContainsKey(Consts.InvalidModelStateReplayParamName);
             return isGetRequest || (isPostRequest && isReplayRequest);
         }
     }

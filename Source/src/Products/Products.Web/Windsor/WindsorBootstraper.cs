@@ -6,7 +6,7 @@ using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
 using Castle.Windsor.Installer;
 using CompositeUI.Infrastructure;
-using CompositeUI.Service.Infrastructure.Consts;
+using CompositeUI.Service.Infrastructure;
 using NServiceBus;
 
 namespace CompositeUI.Products.Web.Windsor

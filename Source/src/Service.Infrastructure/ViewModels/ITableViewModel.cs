@@ -1,7 +1,6 @@
 ﻿using System.Web.Mvc;
-using CompositeUI.Service.Infrastructure.Models;
 
-namespace CompositeUI.Service.Infrastructure.ViewModels
+namespace CompositeUI.Service.Infrastructure
 {
     public interface ITableViewModel : IViewModel
     {

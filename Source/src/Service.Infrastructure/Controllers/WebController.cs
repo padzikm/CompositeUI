@@ -5,12 +5,8 @@ using System.Reflection;
 using System.Threading.Tasks;
 using System.Transactions;
 using System.Web.Mvc;
-using CompositeUI.Service.Infrastructure.Exceptions;
-using CompositeUI.Service.Infrastructure.Models;
-using CompositeUI.Service.Infrastructure.RequestHandlers;
-using CompositeUI.Service.Infrastructure.ViewModels;
 
-namespace CompositeUI.Service.Infrastructure.Controllers
+namespace CompositeUI.Service.Infrastructure
 {
     public class WebController : Controller
     {

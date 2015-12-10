@@ -3,7 +3,7 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using Castle.MicroKernel;
 
-namespace CompositeUI.Service.Infrastructure.Controllers
+namespace CompositeUI.Service.Infrastructure
 {
     public class WindsorControllerActivator : IControllerActivator
     {

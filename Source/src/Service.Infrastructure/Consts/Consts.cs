@@ -1,4 +1,4 @@
-﻿namespace CompositeUI.Service.Infrastructure.Consts
+﻿namespace CompositeUI.Service.Infrastructure
 {
     public class Consts
     {

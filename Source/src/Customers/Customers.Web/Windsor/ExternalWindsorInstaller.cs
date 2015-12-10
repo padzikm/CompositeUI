@@ -3,9 +3,7 @@ using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
 using CompositeUI.Infrastructure;
-using CompositeUI.Service.Infrastructure.Controllers;
-using CompositeUI.Service.Infrastructure.RequestHandlers;
-using CompositeUI.Service.Infrastructure.ViewEngines;
+using CompositeUI.Service.Infrastructure;
 
 namespace CompositeUI.Customers.Web.Windsor
 {

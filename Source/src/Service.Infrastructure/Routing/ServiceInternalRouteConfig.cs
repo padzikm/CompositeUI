@@ -1,42 +1,45 @@
 ﻿using System.Collections.Generic;
 using System.Web.Mvc;
 using System.Web.Routing;
-using CompositeUI.Service.Infrastructure.Consts;
 
-namespace CompositeUI.Service.Infrastructure.Routing
+namespace CompositeUI.Service.Infrastructure
 {
 	internal class CustomersInternalRouteConfig
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
-            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-
-            foreach (var route in RegisteredRoutes(routes))
+			foreach (var publicRoute in RouteTable.Routes)
             {
-                route.DataTokens[Consts.Consts.RouteServiceKey] = CustomersConsts.RouteServiceValue;
-                route.DataTokens[Consts.Consts.RouteInternalServiceKey] = Consts.Consts.RouteInternalServiceValue;
+                var serviceRoute = publicRoute as ServiceRoute;
+                if(serviceRoute != null)
+                    continue;
+                var webRoute = publicRoute as WebRoute;
+                if(webRoute == null)
+                    continue;
+                var route = new Route(webRoute.Url, webRoute.RouteHandler)
+				{
+					RouteExistingFiles = webRoute.RouteExistingFiles,
+					Constraints = new RouteValueDictionary(),
+					DataTokens = new RouteValueDictionary(),
+					Defaults = new RouteValueDictionary(),
+				};
+                foreach (var constraint in webRoute.Constraints)
+                    route.Constraints[constraint.Key] = constraint.Value;
+                foreach (var defaults in webRoute.Defaults)
+                    route.Defaults[defaults.Key] = defaults.Value;
+                foreach (var dataToken in webRoute.DataTokens)
+                    route.DataTokens[dataToken.Key] = dataToken.Value;
+				if(webRoute.DataTokens.ContainsKey("area"))
+					route.DataTokens["Namespaces"] = new [] { "CompositeUI.Customers.Web.Areas." + webRoute.DataTokens["area"] + ".Controllers" };
+				else
+				{
+					route.DataTokens["area"] = CustomersConsts.ServiceName;
+					route.DataTokens["Namespaces"] = new [] { "CompositeUI.Customers.Web.Controllers" };
+				}
+                route.DataTokens[Consts.RouteServiceKey] = CustomersConsts.RouteServiceValue;
+                route.DataTokens[Consts.RouteInternalServiceKey] = Consts.RouteInternalServiceValue;
+				routes.Add(route);
             }
-        }
-
-        private static IEnumerable<Route> RegisteredRoutes(RouteCollection routes)
-        {
-            var route = routes.MapRoute(
-                "TestArea_default",
-                "TestArea/{controller}/{action}/{id}",
-                new {action = "Index", id = UrlParameter.Optional},
-                new[] {"CompositeUI.Customers.Web.Areas.TestArea.Controllers"}
-                );
-            route.DataTokens["area"] = "TestArea";
-            yield return route;
-
-            route = routes.MapRoute(
-                name: "Default",
-                namespaces: new[] { "CompositeUI.Customers.Web.Controllers" },
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
-            route.DataTokens["area"] = CustomersConsts.ServiceName;
-            yield return route;
         }
     }
 
@@ -44,34 +47,38 @@ namespace CompositeUI.Service.Infrastructure.Routing
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
-            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-
-            foreach (var route in RegisteredRoutes(routes))
+			foreach (var publicRoute in RouteTable.Routes)
             {
-                route.DataTokens[Consts.Consts.RouteServiceKey] = OrdersConsts.RouteServiceValue;
-                route.DataTokens[Consts.Consts.RouteInternalServiceKey] = Consts.Consts.RouteInternalServiceValue;
+                var serviceRoute = publicRoute as ServiceRoute;
+                if(serviceRoute != null)
+                    continue;
+                var webRoute = publicRoute as WebRoute;
+                if(webRoute == null)
+                    continue;
+                var route = new Route(webRoute.Url, webRoute.RouteHandler)
+				{
+					RouteExistingFiles = webRoute.RouteExistingFiles,
+					Constraints = new RouteValueDictionary(),
+					DataTokens = new RouteValueDictionary(),
+					Defaults = new RouteValueDictionary(),
+				};
+                foreach (var constraint in webRoute.Constraints)
+                    route.Constraints[constraint.Key] = constraint.Value;
+                foreach (var defaults in webRoute.Defaults)
+                    route.Defaults[defaults.Key] = defaults.Value;
+                foreach (var dataToken in webRoute.DataTokens)
+                    route.DataTokens[dataToken.Key] = dataToken.Value;
+				if(webRoute.DataTokens.ContainsKey("area"))
+					route.DataTokens["Namespaces"] = new [] { "CompositeUI.Orders.Web.Areas." + webRoute.DataTokens["area"] + ".Controllers" };
+				else
+				{
+					route.DataTokens["area"] = OrdersConsts.ServiceName;
+					route.DataTokens["Namespaces"] = new [] { "CompositeUI.Orders.Web.Controllers" };
+				}
+                route.DataTokens[Consts.RouteServiceKey] = OrdersConsts.RouteServiceValue;
+                route.DataTokens[Consts.RouteInternalServiceKey] = Consts.RouteInternalServiceValue;
+				routes.Add(route);
             }
-        }
-
-        private static IEnumerable<Route> RegisteredRoutes(RouteCollection routes)
-        {
-            var route = routes.MapRoute(
-                "TestArea_default",
-                "TestArea/{controller}/{action}/{id}",
-                new {action = "Index", id = UrlParameter.Optional},
-                new[] {"CompositeUI.Orders.Web.Areas.TestArea.Controllers"}
-                );
-            route.DataTokens["area"] = "TestArea";
-            yield return route;
-
-            route = routes.MapRoute(
-                name: "Default",
-                namespaces: new[] { "CompositeUI.Orders.Web.Controllers" },
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
-            route.DataTokens["area"] = OrdersConsts.ServiceName;
-            yield return route;
         }
     }
 
@@ -79,34 +86,38 @@ namespace CompositeUI.Service.Infrastructure.Routing
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
-            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-
-            foreach (var route in RegisteredRoutes(routes))
+			foreach (var publicRoute in RouteTable.Routes)
             {
-                route.DataTokens[Consts.Consts.RouteServiceKey] = ProductsConsts.RouteServiceValue;
-                route.DataTokens[Consts.Consts.RouteInternalServiceKey] = Consts.Consts.RouteInternalServiceValue;
+                var serviceRoute = publicRoute as ServiceRoute;
+                if(serviceRoute != null)
+                    continue;
+                var webRoute = publicRoute as WebRoute;
+                if(webRoute == null)
+                    continue;
+                var route = new Route(webRoute.Url, webRoute.RouteHandler)
+				{
+					RouteExistingFiles = webRoute.RouteExistingFiles,
+					Constraints = new RouteValueDictionary(),
+					DataTokens = new RouteValueDictionary(),
+					Defaults = new RouteValueDictionary(),
+				};
+                foreach (var constraint in webRoute.Constraints)
+                    route.Constraints[constraint.Key] = constraint.Value;
+                foreach (var defaults in webRoute.Defaults)
+                    route.Defaults[defaults.Key] = defaults.Value;
+                foreach (var dataToken in webRoute.DataTokens)
+                    route.DataTokens[dataToken.Key] = dataToken.Value;
+				if(webRoute.DataTokens.ContainsKey("area"))
+					route.DataTokens["Namespaces"] = new [] { "CompositeUI.Products.Web.Areas." + webRoute.DataTokens["area"] + ".Controllers" };
+				else
+				{
+					route.DataTokens["area"] = ProductsConsts.ServiceName;
+					route.DataTokens["Namespaces"] = new [] { "CompositeUI.Products.Web.Controllers" };
+				}
+                route.DataTokens[Consts.RouteServiceKey] = ProductsConsts.RouteServiceValue;
+                route.DataTokens[Consts.RouteInternalServiceKey] = Consts.RouteInternalServiceValue;
+				routes.Add(route);
             }
-        }
-
-        private static IEnumerable<Route> RegisteredRoutes(RouteCollection routes)
-        {
-            var route = routes.MapRoute(
-                "TestArea_default",
-                "TestArea/{controller}/{action}/{id}",
-                new {action = "Index", id = UrlParameter.Optional},
-                new[] {"CompositeUI.Products.Web.Areas.TestArea.Controllers"}
-                );
-            route.DataTokens["area"] = "TestArea";
-            yield return route;
-
-            route = routes.MapRoute(
-                name: "Default",
-                namespaces: new[] { "CompositeUI.Products.Web.Controllers" },
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
-            route.DataTokens["area"] = ProductsConsts.ServiceName;
-            yield return route;
         }
     }
 }

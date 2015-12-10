@@ -1,7 +1,6 @@
 ﻿using System.Web.Routing;
-using CompositeUI.Service.Infrastructure.Consts;
 
-namespace CompositeUI.Web.Infrastructure
+namespace CompositeUI.Service.Infrastructure
 {
     public class WebRoute : Route
     {

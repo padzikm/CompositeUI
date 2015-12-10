@@ -1,5 +1,5 @@
 ﻿using System.Web.Mvc;
-using CompositeUI.Web.Infrastructure;
+using CompositeUI.Service.Infrastructure;
 
 namespace CompositeUI.Web.Areas.TestArea
 {

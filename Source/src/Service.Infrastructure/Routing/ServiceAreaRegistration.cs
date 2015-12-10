@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using System.Web.Routing;
-using CompositeUI.Infrastructure;
 
-namespace CompositeUI.Service.Infrastructure.Routing
+namespace CompositeUI.Service.Infrastructure
 {
     public abstract class ServiceAreaRegistration : AreaRegistration
     {
@@ -43,7 +42,7 @@ namespace CompositeUI.Service.Infrastructure.Routing
             route.DataTokens["area"] = (object)this.AreaName;
             bool flag = namespaces == null || namespaces.Length == 0;
             route.DataTokens["UseNamespaceFallback"] = (object)flag;
-            route.DataTokens[CompositeUI.Service.Infrastructure.Consts.Consts.RouteServiceKey] = this.RouteServiceValue;
+            route.DataTokens[Consts.RouteServiceKey] = this.RouteServiceValue;
             return route;
         }
 

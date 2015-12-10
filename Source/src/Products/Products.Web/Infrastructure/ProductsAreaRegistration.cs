@@ -1,6 +1,5 @@
 ﻿using System.Web.Mvc;
-using CompositeUI.Service.Infrastructure.Consts;
-using CompositeUI.Service.Infrastructure.Routing;
+using CompositeUI.Service.Infrastructure;
 
 namespace CompositeUI.Products.Web.Infrastructure
 {

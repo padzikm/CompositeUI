@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using CompositeUI.Service.Infrastructure.Controllers;
-using CompositeUI.Service.Infrastructure.RequestHandlers;
+using CompositeUI.Service.Infrastructure;
 using CompositeUI.Web.Common.UIKeys;
 
 namespace CompositeUI.Web.Controllers

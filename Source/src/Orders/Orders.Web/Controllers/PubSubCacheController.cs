@@ -4,10 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
-using CompositeUI.Service.Infrastructure.Attributes;
-using CompositeUI.Service.Infrastructure.Consts;
-using CompositeUI.Service.Infrastructure.Controllers;
-using CompositeUI.Service.Infrastructure.ViewModels;
+using CompositeUI.Service.Infrastructure;
 using CompositeUI.Web.Common.UIKeys;
 
 namespace CompositeUI.Orders.Web.Controllers

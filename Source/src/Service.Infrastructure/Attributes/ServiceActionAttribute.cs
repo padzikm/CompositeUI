@@ -1,13 +1,13 @@
 ﻿using System.Reflection;
 using System.Web.Mvc;
 
-namespace CompositeUI.Service.Infrastructure.Attributes
+namespace CompositeUI.Service.Infrastructure
 {
     public class ServiceActionAttribute : ActionMethodSelectorAttribute
     {
         public override bool IsValidForRequest(ControllerContext controllerContext, MethodInfo methodInfo)
         {
-            return !controllerContext.RouteData.DataTokens.ContainsKey(Consts.Consts.RouteInternalServiceKey);
+            return !controllerContext.RouteData.DataTokens.ContainsKey(Consts.RouteInternalServiceKey);
         }
     }
 }

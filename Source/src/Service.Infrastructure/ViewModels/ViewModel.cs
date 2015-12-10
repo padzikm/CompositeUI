@@ -6,9 +6,8 @@ using System.Reflection;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
 using System.Web.Routing;
-using CompositeUI.Service.Infrastructure.Models;
 
-namespace CompositeUI.Service.Infrastructure.ViewModels
+namespace CompositeUI.Service.Infrastructure
 {
     public class ViewModel : IViewModel
     {
@@ -68,7 +67,7 @@ namespace CompositeUI.Service.Infrastructure.ViewModels
             var routeData = context.RouteData;
             _controllerName = (string)routeData.Values["controller"];
             _areaName = routeData.DataTokens.ContainsKey("area") ? (string)routeData.DataTokens["area"] : (string)null;
-            _routeServiceValue = (string)routeData.DataTokens[Consts.Consts.RouteServiceKey];
+            _routeServiceValue = (string)routeData.DataTokens[Consts.RouteServiceKey];
             _modelState = context.Controller.ViewData.ModelState;
             _viewData = context.Controller.ViewData;
         }
@@ -181,7 +180,7 @@ namespace CompositeUI.Service.Infrastructure.ViewModels
             private List<ElementInit> CreateInitializers(List<string> currentInitializersKeys, MethodInfo addMethod, string actionName, string controllerName)
             {
                 var elementInitList = new List<ElementInit>();
-                var key = Expression.Constant(Consts.Consts.RouteServiceKey);
+                var key = Expression.Constant(Consts.RouteServiceKey);
                 var value = Expression.Constant(_parent._routeServiceValue);
                 elementInitList.Add(Expression.ElementInit(addMethod, key, value));
                 if (!_parent.ReturnAction)
@@ -216,7 +215,7 @@ namespace CompositeUI.Service.Infrastructure.ViewModels
                 }
                 if (_parent._containerId != null)
                 {
-                    key = Expression.Constant(Consts.Consts.ContainerId);
+                    key = Expression.Constant(Consts.ContainerId);
                     value = Expression.Constant(_parent._containerId);
                     elementInitList.Add(Expression.ElementInit(addMethod, key, value));
                 }

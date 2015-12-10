@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CompositeUI.Service.Infrastructure.Models
+namespace CompositeUI.Service.Infrastructure
 {
     public class ServicePublicData
     {
