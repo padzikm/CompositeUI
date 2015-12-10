@@ -14,3 +14,4 @@ Features:
 + scalling any subset of service actions - not only whole web applications and machines
 + caching can be used naturally at many levels
 + optimizing amount of server requests
++ adding new services in a transparent way to main web application
