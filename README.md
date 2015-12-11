@@ -15,3 +15,4 @@ Features:
 + caching can be used naturally at many levels
 + optimizing amount of server requests
 + adding new services in transparent way
++ independent from asp.net mvc version
