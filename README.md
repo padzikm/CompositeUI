@@ -1,6 +1,8 @@
 #Welcome to CompositeUI project
 
-This project shows how to create composite UI in asp.net mvc in service oriented architecture style
+This project shows how to create composite UI in asp.net mvc in service oriented architecture style  
+
+Each service has its own web application that can be developed independently from other service web application as if it was hosted on different server, but it is integrated into one process with all other servicie web applications.  
 
 Code includes ready to use composite ui infrastructure component - download sources and include Service.Infrastructure project into your solution
 
