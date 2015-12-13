@@ -7,3 +7,16 @@ c:\Projects\CompositeUI\Source\src\Infrastructure\bin\Debug\Castle.Windsor.xml
 c:\Projects\CompositeUI\Source\src\Infrastructure\obj\Debug\Infrastructure.csprojResolveAssemblyReference.cache
 c:\Projects\CompositeUI\Source\src\Infrastructure\obj\Debug\CompositeUI.Infrastructure.dll
 c:\Projects\CompositeUI\Source\src\Infrastructure\obj\Debug\CompositeUI.Infrastructure.pdb
+c:\Projects\CompositeUI\Source\src\Infrastructure\bin\Debug\Microsoft.Web.Infrastructure.dll
+c:\Projects\CompositeUI\Source\src\Infrastructure\bin\Debug\System.Web.Helpers.dll
+c:\Projects\CompositeUI\Source\src\Infrastructure\bin\Debug\System.Web.Mvc.dll
+c:\Projects\CompositeUI\Source\src\Infrastructure\bin\Debug\System.Web.Razor.dll
+c:\Projects\CompositeUI\Source\src\Infrastructure\bin\Debug\System.Web.WebPages.Deployment.dll
+c:\Projects\CompositeUI\Source\src\Infrastructure\bin\Debug\System.Web.WebPages.dll
+c:\Projects\CompositeUI\Source\src\Infrastructure\bin\Debug\System.Web.WebPages.Razor.dll
+c:\Projects\CompositeUI\Source\src\Infrastructure\bin\Debug\System.Web.Helpers.xml
+c:\Projects\CompositeUI\Source\src\Infrastructure\bin\Debug\System.Web.Mvc.xml
+c:\Projects\CompositeUI\Source\src\Infrastructure\bin\Debug\System.Web.Razor.xml
+c:\Projects\CompositeUI\Source\src\Infrastructure\bin\Debug\System.Web.WebPages.xml
+c:\Projects\CompositeUI\Source\src\Infrastructure\bin\Debug\System.Web.WebPages.Deployment.xml
+c:\Projects\CompositeUI\Source\src\Infrastructure\bin\Debug\System.Web.WebPages.Razor.xml
