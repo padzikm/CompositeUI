@@ -23,7 +23,7 @@ namespace CompositeUI.Service.Infrastructure
 
         public string Id { get; private set; }
 
-        public bool ReturnAction { get; set; }
+        public bool InvokeAction { get; set; }
 
         public Dictionary<string, List<ServicePublicData>> ServiceBreadcrumbsRequests { get; private set; }
 
@@ -134,7 +134,7 @@ namespace CompositeUI.Service.Infrastructure
                     newArg = CreateRouteValueInitializers(arg, actionName, controllerName);
                 else
                     newArg = CreateObjectInitializers(narg, actionName, controllerName);
-                var newActionName = _parent.ReturnAction ? Expression.Constant(actionName) : Expression.Constant("_View");
+                var newActionName = _parent.InvokeAction ? Expression.Constant(actionName) : Expression.Constant("_View");
                 var newArgs = new List<Expression>()
             {
                 args[0],
@@ -183,7 +183,7 @@ namespace CompositeUI.Service.Infrastructure
                 var key = Expression.Constant(Consts.RouteServiceKey);
                 var value = Expression.Constant(_parent._routeServiceValue);
                 elementInitList.Add(Expression.ElementInit(addMethod, key, value));
-                if (!_parent.ReturnAction)
+                if (!_parent.InvokeAction)
                 {
                     key = Expression.Constant("viewName");
                     value = Expression.Constant(actionName);

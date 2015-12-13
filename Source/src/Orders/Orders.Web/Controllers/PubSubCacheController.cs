@@ -44,7 +44,7 @@ namespace CompositeUI.Orders.Web.Controllers
         public async Task<ActionResult> Networking(IEnumerable<string> uiKeys)
         {
             var count = uiKeys.Count();
-            var vm = new ViewModel(UIKeysPubSubCache.Networking.OrdersLabel, page => page.Html.Action("Networking", new { count })) { ReturnAction = true };
+            var vm = new ViewModel(UIKeysPubSubCache.Networking.OrdersLabel, page => page.Html.Action("Networking", new { count })) { InvokeAction = true };
             return ViewModel(vm);
         }
 

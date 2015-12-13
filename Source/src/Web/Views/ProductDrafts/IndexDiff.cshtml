@@ -31,7 +31,6 @@
     });
 
     var productTableFunc = function(data) {
-        console.log(data);
         var productTableOrder = @Html.Raw(ViewData[Model[UIKeysProductDrafts.IndexDiff.ProductTableOrder].Id + "json"]);
         var editUrl = "@Url.Action("Edit")";
         var publishUrl = "@Url.Action("Publish")";

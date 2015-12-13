@@ -45,7 +45,7 @@ namespace CompositeUI.Products.Web.Controllers
         [InternalAction]
         public async Task<ActionResult> Networking()
         {
-            var vm = new ViewModel(UIKeysPubSubCache.Networking.ProductsDiv, page => page.Html.Action("Networking")) { ReturnAction = true };
+            var vm = new ViewModel(UIKeysPubSubCache.Networking.ProductsDiv, page => page.Html.Action("Networking")) { InvokeAction = true };
             return ViewModel(vm);
         }
 

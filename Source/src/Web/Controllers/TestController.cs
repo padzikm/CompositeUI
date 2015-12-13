@@ -12,7 +12,7 @@ namespace CompositeUI.Web.Controllers
         public TestController(IEnumerable<IRequestHandler> requestHandlers) : base(requestHandlers)
         {
         }
-
+        
         [HttpGet]
         public async Task<ActionResult> AddCustomer()
         {
