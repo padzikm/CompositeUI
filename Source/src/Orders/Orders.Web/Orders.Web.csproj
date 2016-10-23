@@ -19,6 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -191,10 +192,10 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
-    <PostBuildEvent>xcopy "$(TargetDir)*" “$(SolutionDir)src\Web\bin\OrdersService\” /s /i /y
-xcopy “$(ProjectDir)Views” “$(SolutionDir)src\Web\OrdersService\Views\” /s /i /y
-xcopy “$(ProjectDir)Areas” “$(SolutionDir)src\Web\OrdersService\Areas\” /s /i /y
-xcopy “$(ProjectDir)Scripts” “$(SolutionDir)src\Web\OrdersService\Scripts\” /s /i /y</PostBuildEvent>
+    <PostBuildEvent>xcopy "$(TargetDir)*" "$(SolutionDir)src\Web\bin\OrdersService\" /s /i /y
+xcopy "$(ProjectDir)Views" "$(SolutionDir)src\Web\OrdersService\Views\" /s /i /y
+xcopy "$(ProjectDir)Areas" "$(SolutionDir)src\Web\OrdersService\Areas\" /s /i /y
+xcopy "$(ProjectDir)Scripts" "$(SolutionDir)src\Web\OrdersService\Scripts\" /s /i /y</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
