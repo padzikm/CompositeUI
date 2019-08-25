@@ -1,4 +1,6 @@
-#Welcome to CompositeUI project
+### Welcome to CompositeUI project
+
+## Check out new project about SOA UI Composition (client side) - https://github.com/padzikm/CompositeUI.js
 
 This project shows how to create composite UI in asp.net mvc in service oriented architecture style  
 
